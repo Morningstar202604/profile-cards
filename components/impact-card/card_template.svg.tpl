@@ -14,28 +14,28 @@
 
   <rect x="30" y="98" width="180" height="82" rx="10" fill="url(#ppanel)" stroke="$LINE"/>
   <line x1="88" y1="98" x2="152" y2="98" stroke="$GOLD" stroke-width="2" opacity="0.7"/>
-  <text x="194" y="114" text-anchor="end" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" letter-spacing="1.5" fill="$DIM">01</text>
+  <text x="194" y="114" text-anchor="end" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="9.5" letter-spacing="1.5" fill="$DIM">01</text>
   <text x="120" y="148" text-anchor="middle" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="28" font-weight="600" fill="url(#gtimp)">$PR_COUNT</text>
   <text x="120" y="168" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei','Segoe UI',sans-serif" font-size="11" letter-spacing="2" fill="$MUTED">合并 PR</text>
 
   <rect x="230" y="98" width="180" height="82" rx="10" fill="url(#ppanel)" stroke="$LINE"/>
   <line x1="288" y1="98" x2="352" y2="98" stroke="$GOLD" stroke-width="2" opacity="0.7"/>
-  <text x="394" y="114" text-anchor="end" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" letter-spacing="1.5" fill="$DIM">02</text>
+  <text x="394" y="114" text-anchor="end" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="9.5" letter-spacing="1.5" fill="$DIM">02</text>
   <text x="320" y="148" text-anchor="middle" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="28" font-weight="600" fill="url(#gtimp)">$REPO_COUNT</text>
   <text x="320" y="168" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei','Segoe UI',sans-serif" font-size="11" letter-spacing="2" fill="$MUTED">贡献仓库</text>
 
   <rect x="430" y="98" width="180" height="82" rx="10" fill="url(#ppanel)" stroke="$LINE"/>
   <line x1="488" y1="98" x2="552" y2="98" stroke="$GOLD" stroke-width="2" opacity="0.7"/>
-  <text x="594" y="114" text-anchor="end" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" letter-spacing="1.5" fill="$DIM">03</text>
+  <text x="594" y="114" text-anchor="end" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="9.5" letter-spacing="1.5" fill="$DIM">03</text>
   <text x="520" y="148" text-anchor="middle" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="24" font-weight="600" fill="url(#gtimp)">$IMPACT</text>
   <text x="520" y="168" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei','Segoe UI',sans-serif" font-size="11" letter-spacing="2" fill="$MUTED">影响力 · Σ 仓库 star</text>
 
   <path d="M30 200 l3.5 -4 l3.5 4 l-3.5 4 z" fill="$GOLD" opacity="0.9"/>
-  <text x="42" y="204" font-family="'PingFang SC','Microsoft YaHei','Segoe UI',sans-serif" font-size="12.5" font-weight="600" letter-spacing="2" fill="$GOLD">贡献分档 · 按仓库 star</text>
+  <text x="42" y="204" font-family="'PingFang SC','Microsoft YaHei','Segoe UI',sans-serif" font-size="13" font-weight="600" letter-spacing="2" fill="$GOLD">贡献分档 · 按仓库 star</text>
   $TIER_BOXES
 
   <path d="M30 296 l3.5 -4 l3.5 4 l-3.5 4 z" fill="$GOLD" opacity="0.9"/>
-  <text x="42" y="300" font-family="'PingFang SC','Microsoft YaHei','Segoe UI',sans-serif" font-size="12.5" font-weight="600" letter-spacing="2" fill="$GOLD">TOP 贡献仓库</text>
+  <text x="42" y="300" font-family="'PingFang SC','Microsoft YaHei','Segoe UI',sans-serif" font-size="13" font-weight="600" letter-spacing="2" fill="$GOLD">TOP 贡献仓库</text>
   $TOP_ROWS
   $RECENT_LINE
 

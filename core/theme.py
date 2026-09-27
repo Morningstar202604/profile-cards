@@ -241,7 +241,7 @@ def edge_marks(w, h, pal):
     short to fit even one repeat.
     """
     g = pal["gold"]
-    op = pal.get("edge_op", 0.18)
+    op = pal.get("edge_op", 0.18) * 0.7  # keep it a whisper, not noise
     top = "P R O F I L E   V E R S E   \u2726   \u661f\u591c\u9381\u91d1   \u2726   ZERO SERVER   \u2726   GITHUB API   \u2726"
     bot = "R E A L   D A T A   \u2726   MIT LICENSE   \u2726   \u6bcf\u65e5\u81ea\u52a8\u5237\u65b0   \u2726   \u96f6\u670d\u52a1\u5668   \u2726"
     mon = "P R O F I L E   V E R S E   \u2726   "

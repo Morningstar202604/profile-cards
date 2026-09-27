@@ -60,16 +60,16 @@ def badge(x, value, label, pal):
         '<circle cx="%d" cy="96" r="11" fill="%s" opacity="0.16"/>'
         '<circle cx="%d" cy="96" r="6" fill="none" stroke="%s" stroke-opacity="0.5" stroke-width="0.8"/>'
         '%s'
-        '<text x="%d" y="%d" text-anchor="middle" font-family="%s" font-size="23" font-weight="600" fill="url(#gtb)">%s</text>'
-        '<text x="%d" y="%d" text-anchor="middle" font-family="%s" font-size="10.5" letter-spacing="2" fill="%s">%s</text>'
-        '<circle cx="%d" cy="118" r="1.4" fill="%s" opacity="0.8"/>'
-        '<circle cx="%d" cy="118" r="1.4" fill="%s" opacity="0.8"/>'
+        '<text x="%d" y="%d" text-anchor="middle" font-family="%s" font-size="25" font-weight="700" fill="url(#gtb)">%s</text>'
+        '<text x="%d" y="%d" text-anchor="middle" font-family="%s" font-size="11" letter-spacing="2" fill="%s">%s</text>'
+        '<circle cx="%d" cy="118" r="1.6" fill="%s" opacity="0.8"/>'
+        '<circle cx="%d" cy="118" r="1.6" fill="%s" opacity="0.8"/>'
         % (x, pal["gold"], pal["gold_bright"],
            x, BADGE_W, BADGE_H, x,
            x + 14, x + BADGE_W - 14, pal["gold_bright"],
            x + 20, pal["gold_bright"], x + 20, pal["gold_bright"],
-           star_icon(x + 20, 96, 7, pal["gold_bright"]),
-           x + BADGE_W // 2 + 12, 101, th.FONT, th.esc(value),
+           star_icon(x + 20, 96, 8, pal["gold_bright"]),
+           x + BADGE_W // 2 + 12, 100, th.FONT, th.esc(value),
            x + BADGE_W // 2 + 12, 123, th.FONT, pal["muted"], th.esc(label),
            x + 24, pal["gold"], x + BADGE_W - 24, pal["gold"])
     )
@@ -121,8 +121,8 @@ def main():
             '<path d="M320 52 l4 4 l-4 4 l-4 -4 z" fill="%s" opacity="0.9"/>'
             '<defs><linearGradient id="pb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="%s"/><stop offset="1" stop-color="%s"/></linearGradient>%s</defs>'
             '%s'
-            '<text x="30" y="%d" font-family="%s" font-size="10" fill="%s">%s</text>'
-            '<text x="610" y="%d" text-anchor="end" font-family="%s" font-size="10" letter-spacing="1.5" fill="%s">badge-card · v1.4.1</text>'
+            '<text x="30" y="%d" font-family="%s" font-size="10.5" fill="%s">%s</text>'
+            '<text x="610" y="%d" text-anchor="end" font-family="%s" font-size="10.5" letter-spacing="1.5" fill="%s">badge-card · v1.4.1</text>'
             '</svg>'
             % (
                 W, H, W, H, th.esc(USER),

@@ -49,10 +49,10 @@ def ring_dots(pal, n=12, r=R + 14):
 
 def chip(x, w, value, label, pal):
     return (
-        '<rect x="%d" y="296" width="%d" height="40" rx="20" fill="url(#ppanel)" stroke="%s" stroke-opacity="0.6"/>'
-        '<path d="M%d 304 l2 -2.5 l2 2.5 l-2 2.5 z" fill="%s" opacity="0.9"/>'
-        '<text x="%d" y="312" text-anchor="middle" font-family="%s" font-size="15" font-weight="600" fill="url(#gtsk)">%s</text>'
-        '<text x="%d" y="327" text-anchor="middle" font-family="%s" font-size="10.5" letter-spacing="1.5" fill="%s">%s</text>'
+        '<rect x="%d" y="294" width="%d" height="42" rx="21" fill="url(#ppanel)" stroke="%s" stroke-opacity="0.6"/>'
+        '<path d="M%d 303 l2 -2.5 l2 2.5 l-2 2.5 z" fill="%s" opacity="0.9"/>'
+        '<text x="%d" y="313" text-anchor="middle" font-family="%s" font-size="16" font-weight="700" fill="url(#gtsk)">%s</text>'
+        '<text x="%d" y="328" text-anchor="middle" font-family="%s" font-size="11" letter-spacing="1.5" fill="%s">%s</text>'
         % (x, w, pal["line"], x + w // 2 - 2, pal["gold"], x + w // 2, th.FONT, th.esc(value), x + w // 2, th.FONT, pal["muted"], th.esc(label))
     )
 
@@ -86,12 +86,12 @@ def main():
             '%s'
             '<circle cx="%d" cy="%d" r="4" fill="%s"/>'
             '<circle cx="%d" cy="%d" r="7" fill="%s" opacity="0.25"/>'
-            '<text x="%d" y="204" text-anchor="middle" font-family="%s" font-size="48" font-weight="600" fill="url(#gtsk)">%d</text>'
-            '<text x="%d" y="228" text-anchor="middle" font-family="%s" font-size="11.5" letter-spacing="2" fill="%s">当前连续 · 天</text>'
+            '<text x="%d" y="203" text-anchor="middle" font-family="%s" font-size="50" font-weight="700" fill="url(#gtsk)">%d</text>'
+            '<text x="%d" y="229" text-anchor="middle" font-family="%s" font-size="12" letter-spacing="2" fill="%s">当前连续天数</text>'
             '%s'
             '%s'
             '<text x="30" y="%d" font-family="%s" font-size="10.5" fill="%s">数据来源 GitHub 贡献日历 · 每日自动刷新 · 零服务器</text>'
-            '<text x="610" y="%d" text-anchor="end" font-family="%s" font-size="10" letter-spacing="1.5" fill="%s">streak-card · v1.4.1</text>'
+            '<text x="610" y="%d" text-anchor="end" font-family="%s" font-size="10.5" letter-spacing="1.5" fill="%s">streak-card · v1.4.1</text>'
             '</svg>'
             % (
                 W, H, W, H, th.esc(USER),

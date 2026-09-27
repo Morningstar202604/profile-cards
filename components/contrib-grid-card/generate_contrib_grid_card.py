@@ -126,13 +126,13 @@ def legend(pal, y):
             RAMP.get(THEME, RAMP["dark"])[2][0],
             RAMP.get(THEME, RAMP["dark"])[3][0],
             RAMP.get(THEME, RAMP["dark"])[4][0]]
-    out = ['<text x="318" y="%d" font-family="%s" font-size="10" fill="%s">每日贡献</text>' % (y + 10, th.FONT, pal["muted"])]
-    x = 390
+    out = ['<text x="310" y="%d" font-family="%s" font-size="10.5" fill="%s">每日贡献</text>' % (y + 11, th.FONT, pal["muted"])]
+    x = 392
     for name, c in zip(items, cols):
         out.append(
-            '<rect x="%d" y="%d" width="11" height="11" rx="2" fill="%s"/>'
-            '<text x="%d" y="%d" font-family="%s" font-size="9.5" fill="%s">%s</text>'
-            % (x, y, c, x + 14, y + 10, th.FONT, pal["muted"], name)
+            '<rect x="%d" y="%d" width="12" height="12" rx="2.5" fill="%s"/>'
+            '<text x="%d" y="%d" font-family="%s" font-size="10" fill="%s">%s</text>'
+            % (x, y, c, x + 15, y + 11, th.FONT, pal["muted"], name)
         )
         x += 48
     return "".join(out)
@@ -183,10 +183,10 @@ def main():
             m = wd0.month
             if m != prev_month:
                 bx = (w - 0) * DX + x0 - DX
-                by = (w + 0) * DY + y0 - DY - 9
+                by = (w + 0) * DY + y0 - DY - 11
                 if bx > 20 and bx < W - 40:
                     month_labels.append(
-                        '<text x="%.1f" y="%.1f" font-family="%s" font-size="9" fill="%s">%s</text>'
+                        '<text x="%.1f" y="%.1f" font-family="%s" font-size="9.5" font-weight="600" fill="%s">%s</text>'
                         % (bx, by, th.FONT, pal["muted"], MONTHS[m - 1])
                     )
                 prev_month = m
@@ -214,8 +214,8 @@ def main():
             '%s'
             '%s'
             '%s'
-            '<text x="30" y="%d" font-family="%s" font-size="10" fill="%s">数据来源 GitHub 贡献日历 · 每日自动刷新</text>'
-            '<text x="610" y="%d" text-anchor="end" font-family="%s" font-size="10" letter-spacing="1.5" fill="%s">contrib-grid-card · v1.4.1</text>'
+            '<text x="30" y="%d" font-family="%s" font-size="10.5" fill="%s">数据来源 GitHub 贡献日历 · 每日自动刷新</text>'
+            '<text x="610" y="%d" text-anchor="end" font-family="%s" font-size="10.5" letter-spacing="1.5" fill="%s">contrib-grid-card · v1.4.1</text>'
             '</svg>'
             % (
                 W, H, W, H, th.esc(USER),

@@ -64,8 +64,8 @@ def metric(x, y, w, h, value, label, pal):
         '<rect x="%d" y="%d" width="%d" height="%d" rx="8" fill="url(#pp)" stroke="%s" stroke-opacity="0.35"/>'
         '<line x1="%d" y1="%d" x2="%d" y2="%d" stroke="%s" stroke-width="1.2" opacity="0.8"/>'
         '<path d="M%d %d l3 -3 l3 3 l-3 3 z" fill="%s"/>'
-        '<text x="%d" y="%d" font-family="%s" font-size="17" font-weight="600" fill="url(#yr)">%s</text>'
-        '<text x="%d" y="%d" font-family="%s" font-size="9" letter-spacing="1.5" fill="%s">%s</text>'
+        '<text x="%d" y="%d" font-family="%s" font-size="18" font-weight="700" fill="url(#yr)">%s</text>'
+        '<text x="%d" y="%d" font-family="%s" font-size="9.5" letter-spacing="1.5" fill="%s">%s</text>'
         % (x, y, w, h, pal["line"],
            x, y + 18, x + w, y + 18, pal["gold"],
            x + 14, y + 14, pal["gold"],

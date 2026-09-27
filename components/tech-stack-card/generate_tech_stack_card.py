@@ -35,8 +35,8 @@ THEME = os.environ.get("THEME", "dark")
 MAX_NODES = int(os.environ.get("MAX_NODES", "6"))
 
 W, H = 640, 360
-CX, CY = 320, 208
-RX, RY = 196, 102
+CX, CY = 320, 196
+RX, RY = 196, 88
 
 
 def node(x, y, color, label, count, pal, out_pos):
@@ -46,8 +46,8 @@ def node(x, y, color, label, count, pal, out_pos):
         '<circle cx="%.1f" cy="%.1f" r="11" fill="%s" opacity="0.16"/>'
         '<circle cx="%.1f" cy="%.1f" r="4.5" fill="%s"/>'
         '<circle cx="%.1f" cy="%.1f" r="7.5" fill="none" stroke="%s" stroke-opacity="0.55" stroke-width="0.8"/>'
-        '<text x="%.1f" y="%.1f" text-anchor="middle" font-family="%s" font-size="12.5" font-weight="600" fill="%s">%s</text>'
-        '<text x="%.1f" y="%.1f" text-anchor="middle" font-family="%s" font-size="9.5" letter-spacing="1.5" fill="%s">%d 个仓库</text>'
+        '<text x="%.1f" y="%.1f" text-anchor="middle" font-family="%s" font-size="13" font-weight="600" fill="%s">%s</text>'
+        '<text x="%.1f" y="%.1f" text-anchor="middle" font-family="%s" font-size="10" letter-spacing="1.5" fill="%s">%d 个仓库</text>'
         % (x, y, color, x, y, color, x, y, color,
            x + ox, y + oy, th.FONT, pal["text"], th.esc(label),
            x + ox, y + oy + 15, th.FONT, pal["muted"], count)
