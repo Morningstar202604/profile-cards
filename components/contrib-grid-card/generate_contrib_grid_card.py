@@ -41,20 +41,26 @@ DX = S * math.cos(math.radians(30))
 DY = S * math.sin(math.radians(30))
 
 # gold ramp per theme: level -> (top face, right face, left face)
-RAMP = {
-    "dark": {
-        1: ("#B89B5E", "#8E753F", "#635026"),
-        2: ("#C9A86A", "#9A7D45", "#6B5729"),
-        3: ("#D8BC7F", "#A88A50", "#76602F"),
-        4: ("#E8D49A", "#B89B5E", "#7E6834"),
-    },
-    "light": {
-        1: ("#A5823B", "#7F6328", "#58451A"),
-        2: ("#B08D3E", "#8A6C2C", "#5F4A1E"),
-        3: ("#C2A055", "#987B3D", "#6B5529"),
-        4: ("#D4B46A", "#AD8C49", "#7A6130"),
-    },
-}
+def _mix(c1, c2, t):
+    """Blend two #RRGGBB colors by t in [0,1]."""
+    a = [int(c1[i:i + 2], 16) for i in (1, 3, 5)]
+    b = [int(c2[i:i + 2], 16) for i in (1, 3, 5)]
+    return "#" + "".join("%02X" % round(x + (y - x) * t) for x, y in zip(a, b))
+
+
+def ramp_of(pal):
+    """Derive a 4-level 3D column ramp from the palette's accent color —
+    theme-agnostic, so new themes (aurora/sunset/mint/…) adapt automatically."""
+    b, g = pal["gold_bright"], pal["gold"]
+    d = _mix(g, "#000000", 0.30)
+    dd = _mix(d, "#000000", 0.35)
+    levels = [
+        (d, _mix(d, "#000000", 0.30), _mix(d, "#000000", 0.50)),
+        (g, _mix(g, "#000000", 0.22), _mix(g, "#000000", 0.42)),
+        (_mix(b, g, 0.40), _mix(b, g, 0.60), _mix(b, g, 0.75)),
+        (b, _mix(b, "#FFFFFF", 0.25), _mix(b, "#FFFFFF", 0.45)),
+    ]
+    return {i + 1: levels[i] for i in range(4)}
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
           "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
@@ -100,7 +106,7 @@ def cell(x0, y0, level, pal):
         % (x0, y0 - DY, x0 + DX, y0, x0, y0 + DY, x0 - DX, y0, base_fill, base_op)
     )
     if level:
-        top, right, left = RAMP.get(THEME, RAMP["dark"])[level]
+        top, right, left = ramp_of(pal)[level]
         h = level * H_UNIT
         t = (x0, y0 - DY - h)
         r = (x0 + DX, y0 - h)
@@ -122,10 +128,8 @@ def cell(x0, y0, level, pal):
 def legend(pal, y):
     """Five swatches: 0 / 1 / 2-3 / 4-6 / 7+ per day."""
     items = ["0", "1", "2-3", "4-6", "7+"]
-    cols = [base_color(pal), RAMP.get(THEME, RAMP["dark"])[1][0],
-            RAMP.get(THEME, RAMP["dark"])[2][0],
-            RAMP.get(THEME, RAMP["dark"])[3][0],
-            RAMP.get(THEME, RAMP["dark"])[4][0]]
+    ramp = ramp_of(pal)
+    cols = [base_color(pal), ramp[1][0], ramp[2][0], ramp[3][0], ramp[4][0]]
     out = ['<text x="310" y="%d" font-family="%s" font-size="10.5" fill="%s">每日贡献</text>' % (y + 11, th.FONT, pal["muted"])]
     x = 392
     for name, c in zip(items, cols):
