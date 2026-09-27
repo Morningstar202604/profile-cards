@@ -99,7 +99,7 @@ def level_of(count):
 def cell(x0, y0, level, pal):
     """One isometric cell: floor diamond + up to 3 prism faces."""
     base_fill = pal["gold"]
-    base_op = 0.07 if THEME != "light" else 0.14
+    base_op = 0.14 if th.is_light(THEME) else 0.07
     out = (
         '<polygon points="%.1f,%.1f %.1f,%.1f %.1f,%.1f %.1f,%.1f" '
         'fill="%s" fill-opacity="%s"/>'

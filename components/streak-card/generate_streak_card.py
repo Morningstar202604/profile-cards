@@ -66,7 +66,7 @@ def main():
         total, days = gh.fetch_contribution_calendar(USER)
         cur, longest = gh.compute_streaks(days)
         date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-        light = THEME != "dark"
+        light = th.is_light(THEME)
 
         svg = (
             '<svg xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" viewBox="0 0 %d %d" role="img" aria-label="Streak — %s">'

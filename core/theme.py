@@ -229,6 +229,14 @@ def palette(name):
     return PALETTES.get(key, PALETTES["dark"])
 
 
+LIGHT_THEMES = frozenset({"light", "rose", "aurora", "sunset", "mint"})
+
+
+def is_light(name):
+    """True for the pale-paper themes (light/rose/aurora/sunset/mint)."""
+    return (name or "").strip().lower() in LIGHT_THEMES
+
+
 def esc(s):
     """XML-escape a string for safe embedding in SVG."""
     return sax.escape(s, {'"': "&quot;"})
