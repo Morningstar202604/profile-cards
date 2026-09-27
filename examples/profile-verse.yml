@@ -32,63 +32,63 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Banner
-        uses: Morningstar202604/profile-verse/components/banner-card@v1
+        uses: Morningstar202604/profile-cards/components/banner-card@v1
         with:
           user: your-github-username
           output: assets/profile-verse/banner-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Typing
-        uses: Morningstar202604/profile-verse/components/typing-card@v1
+        uses: Morningstar202604/profile-cards/components/typing-card@v1
         with:
           phrases: "Hello, I am a developer;Code under the stars"
           output: assets/profile-verse/typing-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Stats
-        uses: Morningstar202604/profile-verse/components/stats-card@v1
+        uses: Morningstar202604/profile-cards/components/stats-card@v1
         with:
           user: your-github-username
           output: assets/profile-verse/stats-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Streak
-        uses: Morningstar202604/profile-verse/components/streak-card@v1
+        uses: Morningstar202604/profile-cards/components/streak-card@v1
         with:
           user: your-github-username
           output: assets/profile-verse/streak-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Contribution grid (3D)
-        uses: Morningstar202604/profile-verse/components/contrib-grid-card@v1
+        uses: Morningstar202604/profile-cards/components/contrib-grid-card@v1
         with:
           user: your-github-username
           output: assets/profile-verse/contrib-grid-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Tech stack
-        uses: Morningstar202604/profile-verse/components/tech-stack-card@v1
+        uses: Morningstar202604/profile-cards/components/tech-stack-card@v1
         with:
           user: your-github-username
           output: assets/profile-verse/tech-stack-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Badges
-        uses: Morningstar202604/profile-verse/components/badge-card@v1
+        uses: Morningstar202604/profile-cards/components/badge-card@v1
         with:
           user: your-github-username
           output: assets/profile-verse/badge-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Impact (merged PRs by repo star tiers)
-        uses: Morningstar202604/profile-verse/components/impact-card@v1
+        uses: Morningstar202604/profile-cards/components/impact-card@v1
         with:
           users: your-github-username        # multi-account: a,b
           output: assets/profile-verse/impact-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Year review (annual ring)
-        uses: Morningstar202604/profile-verse/components/year-review-card@v1
+        uses: Morningstar202604/profile-cards/components/year-review-card@v1
         with:
           user: your-github-username
           output: assets/profile-verse/year-review-card.svg

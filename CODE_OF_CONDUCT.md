@@ -51,7 +51,7 @@ an individual is officially representing the community in public spaces.
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement at
-[GitHub Issues](https://github.com/Morningstar202604/profile-verse/issues).
+[GitHub Issues](https://github.com/Morningstar202604/profile-cards/issues).
 All complaints will be reviewed and investigated promptly and fairly.
 
 ## Attribution

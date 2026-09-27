@@ -6,7 +6,7 @@ GitHub API (with starred_at timestamps), renders a wall, and updates a single
 issue whose body IS the wall. New stars of the last 7 days are highlighted on
 top. No state file, nothing to commit — the API is the source of truth.
 
-Env: GH_TOKEN (required) · REPO (owner/name, default Morningstar202604/profile-verse)
+Env: GH_TOKEN (required) · REPO (owner/name, default Morningstar202604/profile-cards)
 """
 
 import datetime
@@ -16,7 +16,7 @@ import sys
 import urllib.request
 
 API = "https://api.github.com"
-REPO = os.environ.get("REPO", "Morningstar202604/profile-verse")
+REPO = os.environ.get("REPO", "Morningstar202604/profile-cards")
 TITLE = "\u2b50 Stargazer Wall \u00b7 \u611f\u8c22\u5899"
 WEEK_DAYS = 7
 

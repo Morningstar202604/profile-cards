@@ -10,11 +10,11 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Morningstar202604/profile-verse/stargazers"><img src="https://img.shields.io/github/stars/Morningstar202604/profile-verse?style=flat&color=%23C9A86A&label=stars" alt="GitHub stars" /></a>
-  <a href="https://github.com/Morningstar202604/profile-verse/forks"><img src="https://img.shields.io/github/forks/Morningstar202604/profile-verse?style=flat&color=%23C9A86A&label=forks" alt="GitHub forks" /></a>
-  <a href="https://github.com/Morningstar202604/profile-verse/actions"><img src="https://img.shields.io/github/actions/workflow/status/Morningstar202604/profile-verse/update.yml?style=flat&color=%23C9A86A&label=previews" alt="预览自动刷新" /></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/Morningstar202604/profile-verse?style=flat&color=%23C9A86A" alt="MIT license" /></a>
-  <a href="https://github.com/Morningstar202604/profile-verse/releases"><img src="https://img.shields.io/github/v/release/Morningstar202604/profile-verse?style=flat&color=%23C9A86A&label=version" alt="v1.1.0" /></a>
+  <a href="https://github.com/Morningstar202604/profile-cards/stargazers"><img src="https://img.shields.io/github/stars/Morningstar202604/profile-cards?style=flat&color=%23C9A86A&label=stars" alt="GitHub stars" /></a>
+  <a href="https://github.com/Morningstar202604/profile-cards/forks"><img src="https://img.shields.io/github/forks/Morningstar202604/profile-cards?style=flat&color=%23C9A86A&label=forks" alt="GitHub forks" /></a>
+  <a href="https://github.com/Morningstar202604/profile-cards/actions"><img src="https://img.shields.io/github/actions/workflow/status/Morningstar202604/profile-cards/update.yml?style=flat&color=%23C9A86A&label=previews" alt="预览自动刷新" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/Morningstar202604/profile-cards?style=flat&color=%23C9A86A" alt="MIT license" /></a>
+  <a href="https://github.com/Morningstar202604/profile-cards/releases"><img src="https://img.shields.io/github/v/release/Morningstar202604/profile-cards?style=flat&color=%23C9A86A&label=version" alt="v1.1.0" /></a>
   <a href="README.md"><img src="https://img.shields.io/badge/readme-English-8FB4F5?style=flat" alt="English" /></a>
 </p>
 
@@ -68,56 +68,56 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Banner
-        uses: Morningstar202604/profile-verse/components/banner-card@v1
+        uses: Morningstar202604/profile-cards/components/banner-card@v1
         with:
           name: 你的用户名
           output: assets/profile-verse/banner-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Typing
-        uses: Morningstar202604/profile-verse/components/typing-card@v1
+        uses: Morningstar202604/profile-cards/components/typing-card@v1
         with:
           phrases: "写代码，赏星光;与其更好，不如不同"
           output: assets/profile-verse/typing-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Stats
-        uses: Morningstar202604/profile-verse/components/stats-card@v1
+        uses: Morningstar202604/profile-cards/components/stats-card@v1
         with:
           user: 你的用户名
           output: assets/profile-verse/stats-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Streak
-        uses: Morningstar202604/profile-verse/components/streak-card@v1
+        uses: Morningstar202604/profile-cards/components/streak-card@v1
         with:
           user: 你的用户名
           output: assets/profile-verse/streak-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Contribution grid (3D)
-        uses: Morningstar202604/profile-verse/components/contrib-grid-card@v1
+        uses: Morningstar202604/profile-cards/components/contrib-grid-card@v1
         with:
           user: 你的用户名
           output: assets/profile-verse/contrib-grid-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Tech stack
-        uses: Morningstar202604/profile-verse/components/tech-stack-card@v1
+        uses: Morningstar202604/profile-cards/components/tech-stack-card@v1
         with:
           user: 你的用户名
           output: assets/profile-verse/tech-stack-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Badges
-        uses: Morningstar202604/profile-verse/components/badge-card@v1
+        uses: Morningstar202604/profile-cards/components/badge-card@v1
         with:
           user: 你的用户名
           output: assets/profile-verse/badge-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Impact (按仓库 star 分档的已合并 PR)
-        uses: Morningstar202604/profile-verse/components/impact-card@v1
+        uses: Morningstar202604/profile-cards/components/impact-card@v1
         with:
           users: 你的用户名                 # 多账号聚合：a,b
           output: assets/profile-verse/impact-card.svg
@@ -157,7 +157,7 @@ jobs:
 ![Impact light](components/impact-card/preview/impact-card-light.svg)
 
 ```yaml
-- uses: Morningstar202604/profile-verse/components/impact-card@v1
+- uses: Morningstar202604/profile-cards/components/impact-card@v1
   with:
     users: 你的用户名            # 多账号聚合：a,b
     output: impact-card.svg
@@ -170,7 +170,7 @@ jobs:
 ![Stats light](components/stats-card/preview/stats-card-light.svg)
 
 ```yaml
-- uses: Morningstar202604/profile-verse/components/stats-card@v1
+- uses: Morningstar202604/profile-cards/components/stats-card@v1
   with:
     user: 你的用户名
     output: stats-card.svg
@@ -183,7 +183,7 @@ jobs:
 ![Streak light](components/streak-card/preview/streak-card-light.svg)
 
 ```yaml
-- uses: Morningstar202604/profile-verse/components/streak-card@v1
+- uses: Morningstar202604/profile-cards/components/streak-card@v1
   with:
     user: 你的用户名
     output: streak-card.svg
@@ -196,7 +196,7 @@ jobs:
 ![Typing light](components/typing-card/preview/typing-card-light.svg)
 
 ```yaml
-- uses: Morningstar202604/profile-verse/components/typing-card@v1
+- uses: Morningstar202604/profile-cards/components/typing-card@v1
   with:
     phrases: "第一句话;第二句话;第三句话"   # 最多 3 条
     output: typing-card.svg
@@ -209,7 +209,7 @@ jobs:
 ![Contrib light](components/contrib-grid-card/preview/contrib-grid-card-light.svg)
 
 ```yaml
-- uses: Morningstar202604/profile-verse/components/contrib-grid-card@v1
+- uses: Morningstar202604/profile-cards/components/contrib-grid-card@v1
   with:
     user: 你的用户名
     output: contrib-grid-card.svg
@@ -224,7 +224,7 @@ jobs:
 ![Tech light](components/tech-stack-card/preview/tech-stack-card-light.svg)
 
 ```yaml
-- uses: Morningstar202604/profile-verse/components/tech-stack-card@v1
+- uses: Morningstar202604/profile-cards/components/tech-stack-card@v1
   with:
     user: 你的用户名
     output: tech-stack-card.svg
@@ -237,7 +237,7 @@ jobs:
 ![Banner light](components/banner-card/preview/banner-card-light.svg)
 
 ```yaml
-- uses: Morningstar202604/profile-verse/components/banner-card@v1
+- uses: Morningstar202604/profile-cards/components/banner-card@v1
   with:
     name: 你的名字
     output: banner-card.svg
@@ -250,7 +250,7 @@ jobs:
 ![Badge light](components/badge-card/preview/badge-card-light.svg)
 
 ```yaml
-- uses: Morningstar202604/profile-verse/components/badge-card@v1
+- uses: Morningstar202604/profile-cards/components/badge-card@v1
   with:
     user: 你的用户名
     output: badge-card.svg
@@ -264,7 +264,7 @@ jobs:
 ![Year light](components/year-review-card/preview/year-review-card-light.svg)
 
 ```yaml
-- uses: Morningstar202604/profile-verse/components/year-review-card@v1
+- uses: Morningstar202604/profile-cards/components/year-review-card@v1
   with:
     user: 你的用户名
     output: year-review-card.svg
@@ -313,7 +313,7 @@ profile-verse/
 （`contrib-grid-card` 曾短暂拆出过独立仓，现已合并回来；旧链接会自动指向本仓库。）
 
 每周自动更新的 **⭐ Stargazer Wall 感谢墙**（`.github/workflows/star-wall.yml`）会
-在 Issues 里感谢每一位新 star，见 [Issues](https://github.com/Morningstar202604/profile-verse/issues)。
+在 Issues 里感谢每一位新 star，见 [Issues](https://github.com/Morningstar202604/profile-cards/issues)。
 
 ## 🤝 贡献
 

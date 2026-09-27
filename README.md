@@ -10,11 +10,11 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Morningstar202604/profile-verse/stargazers"><img src="https://img.shields.io/github/stars/Morningstar202604/profile-verse?style=flat&color=%23C9A86A&label=stars" alt="GitHub stars" /></a>
-  <a href="https://github.com/Morningstar202604/profile-verse/forks"><img src="https://img.shields.io/github/forks/Morningstar202604/profile-verse?style=flat&color=%23C9A86A&label=forks" alt="GitHub forks" /></a>
-  <a href="https://github.com/Morningstar202604/profile-verse/actions"><img src="https://img.shields.io/github/actions/workflow/status/Morningstar202604/profile-verse/update.yml?style=flat&color=%23C9A86A&label=previews" alt="preview refresh" /></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/Morningstar202604/profile-verse?style=flat&color=%23C9A86A" alt="MIT license" /></a>
-  <a href="https://github.com/Morningstar202604/profile-verse/releases"><img src="https://img.shields.io/github/v/release/Morningstar202604/profile-verse?style=flat&color=%23C9A86A&label=version" alt="v1.1.0" /></a>
+  <a href="https://github.com/Morningstar202604/profile-cards/stargazers"><img src="https://img.shields.io/github/stars/Morningstar202604/profile-cards?style=flat&color=%23C9A86A&label=stars" alt="GitHub stars" /></a>
+  <a href="https://github.com/Morningstar202604/profile-cards/forks"><img src="https://img.shields.io/github/forks/Morningstar202604/profile-cards?style=flat&color=%23C9A86A&label=forks" alt="GitHub forks" /></a>
+  <a href="https://github.com/Morningstar202604/profile-cards/actions"><img src="https://img.shields.io/github/actions/workflow/status/Morningstar202604/profile-cards/update.yml?style=flat&color=%23C9A86A&label=previews" alt="preview refresh" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/Morningstar202604/profile-cards?style=flat&color=%23C9A86A" alt="MIT license" /></a>
+  <a href="https://github.com/Morningstar202604/profile-cards/releases"><img src="https://img.shields.io/github/v/release/Morningstar202604/profile-cards?style=flat&color=%23C9A86A&label=version" alt="v1.1.0" /></a>
   <a href="README.zh.md"><img src="https://img.shields.io/badge/readme-中文-8FB4F5?style=flat" alt="中文版" /></a>
 </p>
 
@@ -82,56 +82,56 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Banner
-        uses: Morningstar202604/profile-verse/components/banner-card@v1
+        uses: Morningstar202604/profile-cards/components/banner-card@v1
         with:
           user: your-github-username
           output: assets/profile-verse/banner-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Typing
-        uses: Morningstar202604/profile-verse/components/typing-card@v1
+        uses: Morningstar202604/profile-cards/components/typing-card@v1
         with:
           phrases: "Hello, I am a developer;Code under the stars"
           output: assets/profile-verse/typing-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Stats
-        uses: Morningstar202604/profile-verse/components/stats-card@v1
+        uses: Morningstar202604/profile-cards/components/stats-card@v1
         with:
           user: your-github-username
           output: assets/profile-verse/stats-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Streak
-        uses: Morningstar202604/profile-verse/components/streak-card@v1
+        uses: Morningstar202604/profile-cards/components/streak-card@v1
         with:
           user: your-github-username
           output: assets/profile-verse/streak-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Contribution grid (3D)
-        uses: Morningstar202604/profile-verse/components/contrib-grid-card@v1
+        uses: Morningstar202604/profile-cards/components/contrib-grid-card@v1
         with:
           user: your-github-username
           output: assets/profile-verse/contrib-grid-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Tech stack
-        uses: Morningstar202604/profile-verse/components/tech-stack-card@v1
+        uses: Morningstar202604/profile-cards/components/tech-stack-card@v1
         with:
           user: your-github-username
           output: assets/profile-verse/tech-stack-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Badges
-        uses: Morningstar202604/profile-verse/components/badge-card@v1
+        uses: Morningstar202604/profile-cards/components/badge-card@v1
         with:
           user: your-github-username
           output: assets/profile-verse/badge-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Impact (merged PRs by repo star tiers)
-        uses: Morningstar202604/profile-verse/components/impact-card@v1
+        uses: Morningstar202604/profile-cards/components/impact-card@v1
         with:
           users: your-github-username        # multi-account: a,b
           output: assets/profile-verse/impact-card.svg
@@ -171,7 +171,7 @@ Your merged PRs, valued by the star tiers of the repos you contributed to — gi
 ![Impact light](components/impact-card/preview/impact-card-light.svg)
 
 ```yaml
-- uses: Morningstar202604/profile-verse/components/impact-card@v1
+- uses: Morningstar202604/profile-cards/components/impact-card@v1
   with:
     users: your-github-username      # multi-account: a,b
     output: impact-card.svg
@@ -184,7 +184,7 @@ Followers / public repos / merged PRs riding a golden orbit. Big numbers, little
 ![Stats light](components/stats-card/preview/stats-card-light.svg)
 
 ```yaml
-- uses: Morningstar202604/profile-verse/components/stats-card@v1
+- uses: Morningstar202604/profile-cards/components/stats-card@v1
   with:
     user: your-github-username
     output: stats-card.svg
@@ -197,7 +197,7 @@ Your current streak is the bright star at the center of a 60-tick dial. Real con
 ![Streak light](components/streak-card/preview/streak-card-light.svg)
 
 ```yaml
-- uses: Morningstar202604/profile-verse/components/streak-card@v1
+- uses: Morningstar202604/profile-cards/components/streak-card@v1
   with:
     user: your-github-username
     output: streak-card.svg
@@ -210,7 +210,7 @@ Your tagline types itself out under the stars with a blinking gold cursor. Pure 
 ![Typing light](components/typing-card/preview/typing-card-light.svg)
 
 ```yaml
-- uses: Morningstar202604/profile-verse/components/typing-card@v1
+- uses: Morningstar202604/profile-cards/components/typing-card@v1
   with:
     phrases: "First line;Second line;Third phrase"   # up to 3
     output: typing-card.svg
@@ -223,7 +223,7 @@ An isometric golden contribution grid (light top / mid side / dark side), five g
 ![Contrib light](components/contrib-grid-card/preview/contrib-grid-card-light.svg)
 
 ```yaml
-- uses: Morningstar202604/profile-verse/components/contrib-grid-card@v1
+- uses: Morningstar202604/profile-cards/components/contrib-grid-card@v1
   with:
     user: your-github-username
     output: contrib-grid-card.svg
@@ -239,7 +239,7 @@ Your main language is the central star; others orbit on golden ellipses and conn
 ![Tech light](components/tech-stack-card/preview/tech-stack-card-light.svg)
 
 ```yaml
-- uses: Morningstar202604/profile-verse/components/tech-stack-card@v1
+- uses: Morningstar202604/profile-cards/components/tech-stack-card@v1
   with:
     user: your-github-username
     output: tech-stack-card.svg
@@ -252,7 +252,7 @@ Your glowing name, gradient text, comet trails. Pure visual, no API.
 ![Banner light](components/banner-card/preview/banner-card-light.svg)
 
 ```yaml
-- uses: Morningstar202604/profile-verse/components/banner-card@v1
+- uses: Morningstar202604/profile-cards/components/banner-card@v1
   with:
     name: your-name
     output: banner-card.svg
@@ -265,7 +265,7 @@ A row of golden medal badges (gradient edge + star icon) instead of flat shields
 ![Badge light](components/badge-card/preview/badge-card-light.svg)
 
 ```yaml
-- uses: Morningstar202604/profile-verse/components/badge-card@v1
+- uses: Morningstar202604/profile-cards/components/badge-card@v1
   with:
     user: your-github-username
     output: badge-card.svg
@@ -279,7 +279,7 @@ Twelve months orbit a golden ring — the bigger and brighter the star, the more
 ![Year light](components/year-review-card/preview/year-review-card-light.svg)
 
 ```yaml
-- uses: Morningstar202604/profile-verse/components/year-review-card@v1
+- uses: Morningstar202604/profile-cards/components/year-review-card@v1
   with:
     user: your-github-username
     output: year-review-card.svg
@@ -329,7 +329,7 @@ zero servers. (A standalone copy of `contrib-grid-card` existed briefly and has
 been merged back; if you bookmarked the old URL it now redirects here.)
 
 A weekly **Stargazer Wall** issue thanks every new star automatically
-(`.github/workflows/star-wall.yml`) — watch [issues](https://github.com/Morningstar202604/profile-verse/issues).
+(`.github/workflows/star-wall.yml`) — watch [issues](https://github.com/Morningstar202604/profile-cards/issues).
 
 ## 🤝 Contributing
 
