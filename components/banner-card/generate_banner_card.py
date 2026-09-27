@@ -121,7 +121,7 @@ def main():
             '<path d="M480 145 l4.5 4.5 l-4.5 4.5 l-4.5 -4.5 z" fill="%s" opacity="0.95"/>'
             '<text x="480" y="180" text-anchor="middle" font-family="%s" font-size="14.5" letter-spacing="3" fill="%s">%s</text>'
             '<text x="28" y="224" font-family="%s" font-size="10.5" letter-spacing="1" fill="%s">PROFILE VERSE</text>'
-            '<text x="932" y="224" text-anchor="end" font-family="%s" font-size="10.5" letter-spacing="1.5" fill="%s">banner-card · v1.4.1</text>'
+            '<text x="932" y="224" text-anchor="end" font-family="%s" font-size="10.5" letter-spacing="1.5" fill="%s">banner-card · v1.5.0</text>'
             '</svg>'
             % (
                 W, H, W, H, th.esc(USER),

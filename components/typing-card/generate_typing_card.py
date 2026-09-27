@@ -130,7 +130,7 @@ def main():
             '%s'
             '%s%s'
             '<text x="30" y="106" font-family="%s" font-size="9.5" letter-spacing="1" fill="%s">PROFILE VERSE</text>'
-            '<text x="610" y="106" text-anchor="end" font-family="%s" font-size="9.5" letter-spacing="1.5" fill="%s">typing-card · v1.4.1</text>'
+            '<text x="610" y="106" text-anchor="end" font-family="%s" font-size="9.5" letter-spacing="1.5" fill="%s">typing-card · v1.5.0</text>'
             '</svg>'
             % (
                 W, H, W, H, th.esc(PHRASES[0]),

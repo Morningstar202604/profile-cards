@@ -41,5 +41,5 @@
 
   <line x1="40" y1="$FOOTER_Y" x2="600" y2="$FOOTER_Y" stroke="$LINE" stroke-width="0.8"/>
   <text x="40" y="$FOOTER_Y2" font-family="'PingFang SC','Microsoft YaHei','Segoe UI',sans-serif" font-size="10" fill="$DIM">数据来源 GitHub API · 每日自动刷新 · 零服务器自动生成</text>
-  <text x="600" y="$FOOTER_Y2" text-anchor="end" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" letter-spacing="1.5" fill="$DIM">impact-card · v1.4.1</text>
+  <text x="600" y="$FOOTER_Y2" text-anchor="end" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" letter-spacing="1.5" fill="$DIM">impact-card · v1.5.0</text>
 </svg>

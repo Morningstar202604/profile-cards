@@ -135,7 +135,7 @@ def main():
             '<text x="%d" y="%d" text-anchor="middle" font-family="%s" font-size="10" letter-spacing="2.5" fill="%s">贡献 · 近一年</text>'
             '%s%s%s%s'
             '<text x="30" y="%d" font-family="%s" font-size="10.5" fill="%s">数据来源 GitHub API · 每日自动刷新 · 零服务器</text>'
-            '<text x="610" y="%d" text-anchor="end" font-family="%s" font-size="10" letter-spacing="1.5" fill="%s">year-review-card · v1.4.1</text>'
+            '<text x="610" y="%d" text-anchor="end" font-family="%s" font-size="10" letter-spacing="1.5" fill="%s">year-review-card · v1.5.0</text>'
             '</svg>'
             % (
                 W, H, W, H, th.esc(USER),

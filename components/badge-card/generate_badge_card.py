@@ -122,7 +122,7 @@ def main():
             '<defs><linearGradient id="pb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="%s"/><stop offset="1" stop-color="%s"/></linearGradient>%s</defs>'
             '%s'
             '<text x="30" y="%d" font-family="%s" font-size="10.5" fill="%s">%s</text>'
-            '<text x="610" y="%d" text-anchor="end" font-family="%s" font-size="10.5" letter-spacing="1.5" fill="%s">badge-card · v1.4.1</text>'
+            '<text x="610" y="%d" text-anchor="end" font-family="%s" font-size="10.5" letter-spacing="1.5" fill="%s">badge-card · v1.5.0</text>'
             '</svg>'
             % (
                 W, H, W, H, th.esc(USER),

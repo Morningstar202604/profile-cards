@@ -4,6 +4,36 @@ All notable changes to Profile Verse are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/).
 Versioning follows [Semantic Versioning](https://semver.org/lang/zh-CN/).
 
+## [1.5.0] - 2026-09-28
+
+### Added
+- **Three new bright themes**: `aurora` (electric violet), `sunset` (coral orange),
+  `mint` (fresh jade) — seven themes in total, every card renders every theme.
+- Contribution-grid column ramp now derives from the palette accent, so new
+  themes adapt automatically (zero config).
+- README theme cheat-sheet & the brand name **ProfileVerse · 星卡**.
+
+### Changed
+- **Repo renamed to `profile-cards`** on all platforms (GitCode / GitHub ×2 /
+  Gitee), synced to the same commit; old links 301-redirect.
+- Design polish pass: unified 10.5px footer scale, larger hero numbers,
+  orbit studs on stats, banner glow & type scale-up, streak copy fix,
+  tech-stack constellation raised to avoid footer collision.
+- Edge-marks watermark opacity lowered 30% (whisper, not noise).
+
+### Fixed
+- **Core**: no empty `Authorization: Bearer` header when no token — GitHub
+  rejects an empty Bearer with 401, which broke every data card without a token.
+- **README / example workflow**: banner-card quick-start used `name:` instead
+  of the required `user:` input — the first step of the copy-paste workflow.
+- **token guard**: REST cards (stats / impact / tech-stack) run anonymously;
+  badge auto-mode degrades to 3 REST metrics without a token; GraphQL cards
+  now explain why a token is required.
+- **year-review-card**: unified core import (no double module), removed the
+  embedded `actions/checkout` that reset the workspace mid-workflow, `python`
+  → `python3`.
+- update.yml now passes `token: ${{ github.token }}` explicitly to API cards.
+
 ## [1.4.1] - 2026-09-25
 
 ### Fixed
@@ -99,7 +129,9 @@ First stable release of the monorepo suite.
 - `git subtree split`-ready monorepo layout ("先合后拆").
 - Live demo on [Morningstar202604 homepage](https://github.com/Morningstar202604/Morningstar202604).
 
-[1.3.0]: https://github.com/Morningstar202604/profile-verse/compare/v1.2.0...v1.3.0
-[1.2.0]: https://github.com/Morningstar202604/profile-verse/compare/v1.1.0...v1.2.0
-[1.1.0]: https://github.com/Morningstar202604/profile-verse/compare/v1.0.0...v1.1.0
-[1.0.0]: https://github.com/Morningstar202604/profile-verse/releases/tag/v1.0.0
+[1.3.0]: https://github.com/Morningstar202604/profile-cards/compare/v1.2.0...v1.3.0
+[1.2.0]: https://github.com/Morningstar202604/profile-cards/compare/v1.1.0...v1.2.0
+[1.1.0]: https://github.com/Morningstar202604/profile-cards/compare/v1.0.0...v1.1.0
+[1.0.0]: https://github.com/Morningstar202604/profile-cards/releases/tag/v1.0.0
+
+[1.5.0]: https://github.com/Morningstar202604/profile-cards/compare/v1.4.1...v1.5.0

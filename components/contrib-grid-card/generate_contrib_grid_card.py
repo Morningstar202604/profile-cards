@@ -219,7 +219,7 @@ def main():
             '%s'
             '%s'
             '<text x="30" y="%d" font-family="%s" font-size="10.5" fill="%s">数据来源 GitHub 贡献日历 · 每日自动刷新</text>'
-            '<text x="610" y="%d" text-anchor="end" font-family="%s" font-size="10.5" letter-spacing="1.5" fill="%s">contrib-grid-card · v1.4.1</text>'
+            '<text x="610" y="%d" text-anchor="end" font-family="%s" font-size="10.5" letter-spacing="1.5" fill="%s">contrib-grid-card · v1.5.0</text>'
             '</svg>'
             % (
                 W, H, W, H, th.esc(USER),
