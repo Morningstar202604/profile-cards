@@ -7,7 +7,8 @@ Generates a beautiful SVG card showing a GitHub user's merged pull requests,
 weighted by the star count of the repositories they contributed to.
 
 Run:  python3 generate_impact_card.py
-Env:  GH_TOKEN (required) · USERS (default Morningstar202604) · OUTPUT
+Env:  GH_TOKEN (optional — public data works anonymously, token raises the
+      rate limit) · USERS (default Morningstar202604) · OUTPUT
       (default impact-card.svg) · MAX_PR (300) · MAX_TOP (5) · THEME (dark|light)
 
 Part of Profile Verse: https://github.com/Morningstar202604/profile-verse
@@ -202,9 +203,6 @@ def render(data):
 
 
 def main():
-    if not gh.token():
-        sys.stderr.write("error: GH_TOKEN is required (merged-PR search needs auth).\n")
-        return 1
     pal = th.palette(THEME)
     try:
         data = build_data()

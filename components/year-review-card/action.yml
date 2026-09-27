@@ -13,6 +13,10 @@ inputs:
     description: Output SVG path
     required: false
     default: year-review-card.svg
+  token:
+    description: "GitHub token (defaults to the workflow's github.token)"
+    required: false
+    default: "${{ github.token }}"
   theme:
     description: "Theme: dark (midnight) | light (ivory) | rose (rose gold) | ocean (deep sea)"
     required: false
@@ -21,17 +25,11 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: "3.12"
     - name: Generate year-review card
       env:
-        GH_TOKEN: ${{ github.token }}
+        GH_TOKEN: ${{ inputs.token }}
         USER: ${{ inputs.user }}
         THEME: ${{ inputs.theme }}
         OUTPUT: ${{ inputs.output }}
-      run: python "${{ github.action_path }}/generate_year_review_card.py"
+      run: python3 "${{ github.action_path }}/generate_year_review_card.py"
       shell: bash

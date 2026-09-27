@@ -22,12 +22,14 @@ jobs:
       - name: Impact card
         uses: ./components/impact-card
         with:
+          token: ${{ github.token }}
           users: Morningstar202604
           output: components/impact-card/preview/impact-card.svg
 
       - name: Impact card (light)
         uses: ./components/impact-card
         with:
+          token: ${{ github.token }}
           users: Morningstar202604
           theme: light
           output: components/impact-card/preview/impact-card-light.svg
@@ -35,12 +37,14 @@ jobs:
       - name: Stats card
         uses: ./components/stats-card
         with:
+          token: ${{ github.token }}
           user: Morningstar202604
           output: components/stats-card/preview/stats-card.svg
 
       - name: Stats card (light)
         uses: ./components/stats-card
         with:
+          token: ${{ github.token }}
           user: Morningstar202604
           theme: light
           output: components/stats-card/preview/stats-card-light.svg
@@ -48,12 +52,14 @@ jobs:
       - name: Streak card
         uses: ./components/streak-card
         with:
+          token: ${{ github.token }}
           user: Morningstar202604
           output: components/streak-card/preview/streak-card.svg
 
       - name: Streak card (light)
         uses: ./components/streak-card
         with:
+          token: ${{ github.token }}
           user: Morningstar202604
           theme: light
           output: components/streak-card/preview/streak-card-light.svg
@@ -72,12 +78,14 @@ jobs:
       - name: Contribution grid card (3D)
         uses: ./components/contrib-grid-card
         with:
+          token: ${{ github.token }}
           user: Morningstar202604
           output: components/contrib-grid-card/preview/contrib-grid-card.svg
 
       - name: Contribution grid card (3D, light)
         uses: ./components/contrib-grid-card
         with:
+          token: ${{ github.token }}
           user: Morningstar202604
           theme: light
           output: components/contrib-grid-card/preview/contrib-grid-card-light.svg
@@ -85,12 +93,14 @@ jobs:
       - name: Tech stack card
         uses: ./components/tech-stack-card
         with:
+          token: ${{ github.token }}
           user: Morningstar202604
           output: components/tech-stack-card/preview/tech-stack-card.svg
 
       - name: Tech stack card (light)
         uses: ./components/tech-stack-card
         with:
+          token: ${{ github.token }}
           user: Morningstar202604
           theme: light
           output: components/tech-stack-card/preview/tech-stack-card-light.svg
@@ -111,12 +121,14 @@ jobs:
       - name: Badge card
         uses: ./components/badge-card
         with:
+          token: ${{ github.token }}
           user: Morningstar202604
           output: components/badge-card/preview/badge-card.svg
 
       - name: Badge card (light)
         uses: ./components/badge-card
         with:
+          token: ${{ github.token }}
           user: Morningstar202604
           theme: light
           output: components/badge-card/preview/badge-card-light.svg
@@ -124,12 +136,14 @@ jobs:
       - name: Year review card
         uses: ./components/year-review-card
         with:
+          token: ${{ github.token }}
           user: Morningstar202604
           output: components/year-review-card/preview/year-review-card.svg
 
       - name: Year review card (light)
         uses: ./components/year-review-card
         with:
+          token: ${{ github.token }}
           user: Morningstar202604
           theme: light
           output: components/year-review-card/preview/year-review-card-light.svg

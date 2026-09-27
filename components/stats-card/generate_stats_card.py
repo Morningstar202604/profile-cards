@@ -7,7 +7,8 @@ A differentiated "stats" card: three hero numbers (followers / public repos /
 merged PRs) sitting on golden orbit arcs over a starfield. Signature look:
 planets-on-orbits, not a plain grid.
 
-Env: GH_TOKEN (required) · USER (default Morningstar202604) · OUTPUT
+Env: GH_TOKEN (optional — public data works anonymously, token raises the
+     rate limit) · USER (default Morningstar202604) · OUTPUT
      (default stats-card.svg) · THEME (dark|light)
 
 Part of Profile Verse: https://github.com/Morningstar202604/profile-verse
@@ -36,9 +37,6 @@ def orbit(x, y, rx, ry, rot, pal):
 
 
 def main():
-    if not gh.token():
-        sys.stderr.write("error: GH_TOKEN is required.\n")
-        return 1
     pal = th.palette(THEME)
     try:
         prof = gh.fetch_user(USER)

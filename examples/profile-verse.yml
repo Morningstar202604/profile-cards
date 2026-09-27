@@ -34,7 +34,7 @@ jobs:
       - name: Banner
         uses: Morningstar202604/profile-verse/components/banner-card@v1
         with:
-          name: your-github-username
+          user: your-github-username
           output: assets/profile-verse/banner-card.svg
           theme: ${{ inputs.theme }}
 

@@ -9,8 +9,10 @@ Signature look: golden medals, not flat pills.
 
 Data: by default auto-computed from GitHub (merged PRs / yearly contributions /
 public repos / followers); or pass your own via `badges` ("label=value;...").
+Without GH_TOKEN, auto mode falls back to the three public REST metrics
+(merged PRs / repos / followers) and omits the GraphQL-only yearly total.
 
-Env: GH_TOKEN (required for auto mode) · USER (default Morningstar202604) ·
+Env: GH_TOKEN (optional) · USER (default Morningstar202604) ·
      BADGES (optional custom badges) · OUTPUT (default badge-card.svg) ·
      THEME (dark|light)
 
@@ -90,18 +92,16 @@ def main():
                 else:
                     items.append((seg.strip(), seg.strip()))
         else:
-            if not gh.token():
-                sys.stderr.write("error: GH_TOKEN is required when BADGES is not set.\n")
-                return 1
             prof = gh.fetch_user(USER)
             prs = len(gh.fetch_merged_prs(USER))
-            total, _ = gh.fetch_contribution_calendar(USER)
             items = [
                 ("%d" % prs, "已合并 PR"),
-                ("%d" % total, "全年贡献"),
                 ("%d" % prof.get("public_repos", 0), "公开仓库"),
                 ("%d" % prof.get("followers", 0), "关注者"),
             ]
+            if gh.token():
+                total, _ = gh.fetch_contribution_calendar(USER)
+                items.insert(1, ("%d" % total, "全年贡献"))
 
         badges = []
         n = len(items[:5])

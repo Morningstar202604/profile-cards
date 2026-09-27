@@ -59,7 +59,7 @@ def chip(x, w, value, label, pal):
 
 def main():
     if not gh.token():
-        sys.stderr.write("error: GH_TOKEN is required.\n")
+        sys.stderr.write("error: GH_TOKEN is required — the contribution calendar is fetched via GitHub GraphQL, which always requires authentication.\n")
         return 1
     pal = th.palette(THEME)
     try:

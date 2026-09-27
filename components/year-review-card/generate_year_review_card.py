@@ -14,9 +14,11 @@ import os
 import sys
 from datetime import date as _date
 
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "core"))
-import github as gh  # noqa: E402
-import theme as th  # noqa: E402
+_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, _ROOT)
+
+from core import github as gh  # noqa: E402
+from core import theme as th  # noqa: E402
 
 USER = os.environ.get("USER", "Morningstar202604")
 THEME = os.environ.get("THEME", "dark")
@@ -73,6 +75,9 @@ def metric(x, y, w, h, value, label, pal):
 
 
 def main():
+    if not gh.token():
+        sys.stderr.write("error: GH_TOKEN is required — the contribution calendar is fetched via GitHub GraphQL, which always requires authentication.\n")
+        return 1
     try:
         pal = th.palette(THEME)
         light = THEME.strip().lower() == "light"

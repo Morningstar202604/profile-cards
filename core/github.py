@@ -15,17 +15,20 @@ def token():
 
 
 def api(path, params=None):
+    """GET an API path. Public endpoints work without a token; when a token is
+    present it is sent as a Bearer header. An *empty* Bearer header is never
+    sent — GitHub rejects it with 401."""
     url = API + path
     if params:
         url += "?" + urllib.parse.urlencode(params)
-    req = urllib.request.Request(
-        url,
-        headers={
-            "Accept": "application/vnd.github+json",
-            "User-Agent": "profile-verse",
-            "Authorization": "Bearer " + token(),
-        },
-    )
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "User-Agent": "profile-verse",
+    }
+    tok = token()
+    if tok:
+        headers["Authorization"] = "Bearer " + tok
+    req = urllib.request.Request(url, headers=headers)
     with urllib.request.urlopen(req, timeout=30) as resp:
         return json.loads(resp.read().decode("utf-8"))
 
@@ -159,16 +162,15 @@ def fetch_contribution_calendar(user):
         "date contributionCount}}}}}}"
     )
     payload = json.dumps({"query": q, "variables": {"login": user}}).encode("utf-8")
-    req = urllib.request.Request(
-        API + "/graphql",
-        data=payload,
-        headers={
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "User-Agent": "profile-verse",
-            "Authorization": "Bearer " + token(),
-        },
-    )
+    headers = {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "User-Agent": "profile-verse",
+    }
+    tok = token()
+    if tok:
+        headers["Authorization"] = "Bearer " + tok
+    req = urllib.request.Request(API + "/graphql", data=payload, headers=headers)
     with urllib.request.urlopen(req, timeout=30) as resp:
         data = json.loads(resp.read().decode("utf-8"))
     try:

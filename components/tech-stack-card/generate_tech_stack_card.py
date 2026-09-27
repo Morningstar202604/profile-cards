@@ -10,7 +10,8 @@ lines. Signature look: star-map constellation, not a badge strip.
 Real data: language of every public repo via GitHub API (repo count per
 language, top 6).
 
-Env: GH_TOKEN (required) · USER (default Morningstar202604) · OUTPUT
+Env: GH_TOKEN (optional — public data works anonymously, token raises the
+     rate limit) · USER (default Morningstar202604) · OUTPUT
      (default tech-stack-card.svg) · THEME (dark|light)
 
 Part of Profile Verse: https://github.com/Morningstar202604/profile-verse
@@ -65,9 +66,6 @@ def star5(cx, cy, r, fill, opacity=""):
 
 
 def main():
-    if not gh.token():
-        sys.stderr.write("error: GH_TOKEN is required.\n")
-        return 1
     pal = th.palette(THEME)
     try:
         repos = gh.fetch_repos(USER)
