@@ -1,0 +1,44 @@
+name: "Projects Card"
+description: >-
+  [Profile Verse] A 2×2 grid of project cards (name · description · language ·
+  stars) that replaces the flat text list. Live from the GitHub REST API,
+  auto-updates every run. Zero server.
+author: "Morningstar202604"
+branding:
+  icon: "layout"
+  color: "yellow"
+
+inputs:
+  user:
+    description: "GitHub username"
+    required: false
+    default: "Morningstar202604"
+  count:
+    description: "Number of projects to show (2×2 grid default: 4; max 8)"
+    required: false
+    default: "4"
+  output:
+    description: "Output path for the generated SVG"
+    required: false
+    default: "projects-card.svg"
+  token:
+    description: "GitHub token (optional — public REST data works anonymously)"
+    required: false
+    default: ""
+  theme:
+    description: "Theme: dark | light | rose | ocean | aurora | sunset | mint"
+    required: false
+    default: "dark"
+
+runs:
+  using: "composite"
+  steps:
+    - name: "Generate projects card"
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.token }}
+        USER: ${{ inputs.user }}
+        COUNT: ${{ inputs.count }}
+        OUTPUT: ${{ inputs.output }}
+        THEME: ${{ inputs.theme }}
+      run: python3 "${{ github.action_path }}/generate_projects_card.py"

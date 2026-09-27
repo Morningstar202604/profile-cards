@@ -130,6 +130,13 @@ jobs:
           output: assets/profile-verse/badge-card.svg
           theme: ${{ inputs.theme }}
 
+      - name: Projects (2×2 grid)
+        uses: Morningstar202604/profile-cards/components/projects-card@v1
+        with:
+          user: your-github-username
+          output: assets/profile-verse/projects-card.svg
+          theme: ${{ inputs.theme }}
+
       - name: Impact (merged PRs by repo star tiers)
         uses: Morningstar202604/profile-cards/components/impact-card@v1
         with:

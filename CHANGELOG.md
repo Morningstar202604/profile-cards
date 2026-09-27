@@ -4,6 +4,14 @@ All notable changes to Profile Verse are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/).
 Versioning follows [Semantic Versioning](https://semver.org/lang/zh-CN/).
 
+## [1.6.0] - 2026-09-28
+
+### Added
+- **projects-card** — new component: a 2×2 grid of project cards
+  (name · description · language · stars) replacing the flat text list.
+  Live from the GitHub REST API (top non-fork repos by stars), all seven
+  themes, `count` input up to 8.
+
 ## [1.5.0] - 2026-09-28
 
 ### Added
@@ -135,3 +143,5 @@ First stable release of the monorepo suite.
 [1.0.0]: https://github.com/Morningstar202604/profile-cards/releases/tag/v1.0.0
 
 [1.5.0]: https://github.com/Morningstar202604/profile-cards/compare/v1.4.1...v1.5.0
+
+[1.6.0]: https://github.com/Morningstar202604/profile-cards/compare/v1.5.0...v1.6.0
