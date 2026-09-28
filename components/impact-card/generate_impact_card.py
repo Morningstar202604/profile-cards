@@ -11,7 +11,7 @@ Env:  GH_TOKEN (optional — public data works anonymously, token raises the
       rate limit) · USERS (default Morningstar202604) · OUTPUT
       (default impact-card.svg) · MAX_PR (300) · MAX_TOP (5) · THEME (dark|light)
 
-Part of Profile Verse: https://github.com/Morningstar202604/profile-verse
+Part of Profile Verse: https://github.com/Morningstar202604/profile-cards
 """
 
 import os

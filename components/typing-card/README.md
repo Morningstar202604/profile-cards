@@ -4,16 +4,16 @@
 
 一眼特征：**星空打字机 + 金色光标**。
 
-属于 [Profile Verse](https://github.com/Morningstar202604/profile-verse)。
+属于 [Profile Verse](https://github.com/Morningstar202604/profile-cards)。
 
-![Typing Card](https://cdn.jsdelivr.net/gh/Morningstar202604/profile-verse@main/components/typing-card/preview/typing-card.svg)
+![Typing Card](https://cdn.jsdelivr.net/gh/Morningstar202604/profile-cards@main/components/typing-card/preview/typing-card.svg)
 
 ## 用法
 
 ```yaml
 - uses: actions/checkout@v4
 - name: Generate typing card
-  uses: Morningstar202604/profile-verse/components/typing-card@v1
+  uses: Morningstar202604/profile-cards/components/typing-card@v1
   with:
     phrases: "你的标语一;Your slogan two;第三条"
     output: typing-card.svg

@@ -14,7 +14,7 @@ Env: GH_TOKEN (optional) · USER (default Morningstar202604) ·
      COUNT (default 4, max 8) · OUTPUT (default projects-card.svg) ·
      THEME (dark|light|rose|ocean|aurora|sunset|mint)
 
-Part of Profile Verse: https://github.com/Morningstar202604/profile-verse
+Part of Profile Verse: https://github.com/Morningstar202604/profile-cards
 """
 
 import html

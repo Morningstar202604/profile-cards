@@ -10,7 +10,7 @@ animation, so it animates anywhere an <img> renders — no server, no JS.
 Env: PHRASES (semicolon-separated, default below) · OUTPUT (default typing-card.svg)
      · THEME (dark|light)
 
-Part of Profile Verse: https://github.com/Morningstar202604/profile-verse
+Part of Profile Verse: https://github.com/Morningstar202604/profile-cards
 """
 
 import os

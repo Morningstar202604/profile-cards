@@ -4,16 +4,16 @@
 
 数据真实：来自 GitHub API 每个公开仓库的主语言，按仓库数统计，中央星 = 使用最多的语言。
 
-属于 [Profile Verse](https://github.com/Morningstar202604/profile-verse)。
+属于 [Profile Verse](https://github.com/Morningstar202604/profile-cards)。
 
-![Tech Stack Card](https://cdn.jsdelivr.net/gh/Morningstar202604/profile-verse@main/components/tech-stack-card/preview/tech-stack-card.svg)
+![Tech Stack Card](https://cdn.jsdelivr.net/gh/Morningstar202604/profile-cards@main/components/tech-stack-card/preview/tech-stack-card.svg)
 
 ## 用法
 
 ```yaml
 - uses: actions/checkout@v4
 - name: Generate tech stack card
-  uses: Morningstar202604/profile-verse/components/tech-stack-card@v1
+  uses: Morningstar202604/profile-cards/components/tech-stack-card@v1
   with:
     user: your-github-username
     output: tech-stack-card.svg

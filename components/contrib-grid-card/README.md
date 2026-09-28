@@ -1,6 +1,6 @@
 # Contribution Grid Card (3D)
 
-![Contribution Grid Card](https://cdn.jsdelivr.net/gh/Morningstar202604/profile-verse@main/components/contrib-grid-card/preview/contrib-grid-card.svg)
+![Contribution Grid Card](https://cdn.jsdelivr.net/gh/Morningstar202604/profile-cards@main/components/contrib-grid-card/preview/contrib-grid-card.svg)
 
 把你的 GitHub 贡献日历，画成一片**3D 等距金色贡献柱**：柱子高度 = 当天贡献量，
 像一片金色城市从星空里长出来。
@@ -17,7 +17,7 @@
 ```yaml
 - uses: actions/checkout@v4
 - name: Generate contribution grid
-  uses: Morningstar202604/profile-verse/components/contrib-grid-card@v1
+  uses: Morningstar202604/profile-cards/components/contrib-grid-card@v1
   with:
     user: your-github-username
     output: contrib-grid.svg
@@ -51,4 +51,4 @@ GH_TOKEN=xxx USER=your-name python3 generate_contrib_grid_card.py
 - 数据：GitHub 贡献日历 API（GraphQL），全年真实数据
 - 刷新：GitHub Actions 定时任务自动重跑并提交新 SVG，零服务器
 
-Part of **Profile Verse** · [仓库](https://github.com/Morningstar202604/profile-verse) · MIT
+Part of **Profile Verse** · [仓库](https://github.com/Morningstar202604/profile-cards) · MIT

@@ -4,16 +4,16 @@
 
 纯视觉组件，不需要 GitHub API，任何用户都能直接用；填上自己的名字和标语即可。
 
-属于 [Profile Verse](https://github.com/Morningstar202604/profile-verse)。
+属于 [Profile Verse](https://github.com/Morningstar202604/profile-cards)。
 
-![Banner Card](https://cdn.jsdelivr.net/gh/Morningstar202604/profile-verse@main/components/banner-card/preview/banner-card.svg)
+![Banner Card](https://cdn.jsdelivr.net/gh/Morningstar202604/profile-cards@main/components/banner-card/preview/banner-card.svg)
 
 ## 用法
 
 ```yaml
 - uses: actions/checkout@v4
 - name: Generate banner card
-  uses: Morningstar202604/profile-verse/components/banner-card@v1
+  uses: Morningstar202604/profile-cards/components/banner-card@v1
   with:
     user: your-github-username
     text: "你的标语"

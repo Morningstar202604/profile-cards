@@ -6,7 +6,7 @@ Profile Verse cards are **pure static SVG** generated at build time by GitHub Ac
 
 Even so, SVG is a powerful format. If you find a way to abuse a generated card (e.g., script injection through user input like `name`, `phrases`, or `badges` reaching the SVG), please **do not open a public issue**.
 
-Report it privately to the maintainer via [GitHub's private vulnerability reporting](https://github.com/Morningstar202604/profile-verse/security/advisories) for this repository.
+Report it privately to the maintainer via [GitHub's private vulnerability reporting](https://github.com/Morningstar202604/profile-cards/security/advisories) for this repository.
 
 Please include:
 

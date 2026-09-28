@@ -12,7 +12,7 @@ Data is real, from the GitHub contribution calendar (GraphQL, full year).
 Env: GH_TOKEN (required) · USER (default Morningstar202604) · OUTPUT
      (default streak-card.svg) · THEME (dark|light)
 
-Part of Profile Verse: https://github.com/Morningstar202604/profile-verse
+Part of Profile Verse: https://github.com/Morningstar202604/profile-cards
 """
 
 import math

@@ -11,7 +11,7 @@ Env: GH_TOKEN (optional — public data works anonymously, token raises the
      rate limit) · USER (default Morningstar202604) · OUTPUT
      (default stats-card.svg) · THEME (dark|light)
 
-Part of Profile Verse: https://github.com/Morningstar202604/profile-verse
+Part of Profile Verse: https://github.com/Morningstar202604/profile-cards
 """
 
 import os

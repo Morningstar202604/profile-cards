@@ -2,9 +2,9 @@
 
 生成一张展示"已合并 PR × 仓库 star"的贡献影响力卡片（SVG），自动标注你在多大体量的开源项目里被合并过 PR。零服务器、零成本：GitHub Actions 定时生成、提交到仓库、任何人一行 `<img>` 引用。
 
-属于 [Profile Verse](https://github.com/Morningstar202604/profile-verse) 全家桶的第一个组件。
+属于 [Profile Verse](https://github.com/Morningstar202604/profile-cards) 全家桶的第一个组件。
 
-![Impact Card](https://cdn.jsdelivr.net/gh/Morningstar202604/profile-verse@main/components/impact-card/preview/impact-card.svg)
+![Impact Card](https://cdn.jsdelivr.net/gh/Morningstar202604/profile-cards@main/components/impact-card/preview/impact-card.svg)
 
 ## 特性
 
@@ -36,7 +36,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Generate impact card
-        uses: Morningstar202604/profile-verse/components/impact-card@v1
+        uses: Morningstar202604/profile-cards/components/impact-card@v1
         with:
           users: your-github-username
           output: impact-card.svg

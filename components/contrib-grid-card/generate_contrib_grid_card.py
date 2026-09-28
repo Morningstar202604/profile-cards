@@ -14,7 +14,7 @@ Pure stdlib SVG — zero server, zero JS, no third-party action needed.
 Env: GH_TOKEN (required) · USER (default Morningstar202604) · OUTPUT
      (default contrib-grid-card.svg) · THEME (dark|light)
 
-Part of Profile Verse: https://github.com/Morningstar202604/profile-verse
+Part of Profile Verse: https://github.com/Morningstar202604/profile-cards
 """
 
 import math

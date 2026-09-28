@@ -2,11 +2,11 @@
 
 一年 12 个月绕成一枚**金色年轮**：每个月的贡献是一颗星，星越大越亮代表贡献越多；最活跃的月份带光晕。轮心是近一年贡献总数（金色渐变），右侧四枚「年度星章」：最活跃月 / 最长连续 / 合并 PR / 主力语言。
 
-属于 [Profile Verse](https://github.com/Morningstar202604/profile-verse) 全家桶的第 9 个组件。
+属于 [Profile Verse](https://github.com/Morningstar202604/profile-cards) 全家桶的第 9 个组件。
 
-![Year Review dark](https://cdn.jsdelivr.net/gh/Morningstar202604/profile-verse@main/components/year-review-card/preview/year-review-card.svg)
+![Year Review dark](https://cdn.jsdelivr.net/gh/Morningstar202604/profile-cards@main/components/year-review-card/preview/year-review-card.svg)
 
-![Year Review light](https://cdn.jsdelivr.net/gh/Morningstar202604/profile-verse@main/components/year-review-card/preview/year-review-card-light.svg)
+![Year Review light](https://cdn.jsdelivr.net/gh/Morningstar202604/profile-cards@main/components/year-review-card/preview/year-review-card-light.svg)
 
 ## 特性
 
@@ -19,7 +19,7 @@
 ## 怎么用
 
 ```yaml
-- uses: Morningstar202604/profile-verse/components/year-review-card@v1
+- uses: Morningstar202604/profile-cards/components/year-review-card@v1
   with:
     user: your-github-username
     output: year-review-card.svg

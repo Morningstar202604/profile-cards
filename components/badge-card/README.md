@@ -4,16 +4,16 @@
 
 默认自动模式：从 GitHub API 取真实数据（已合并 PR / 全年贡献 / 公开仓库 / 关注者）；也可以传 `badges` 完全自定义。
 
-属于 [Profile Verse](https://github.com/Morningstar202604/profile-verse)。
+属于 [Profile Verse](https://github.com/Morningstar202604/profile-cards)。
 
-![Badge Card](https://cdn.jsdelivr.net/gh/Morningstar202604/profile-verse@main/components/badge-card/preview/badge-card.svg)
+![Badge Card](https://cdn.jsdelivr.net/gh/Morningstar202604/profile-cards@main/components/badge-card/preview/badge-card.svg)
 
 ## 用法
 
 ```yaml
 - uses: actions/checkout@v4
 - name: Generate badge card
-  uses: Morningstar202604/profile-verse/components/badge-card@v1
+  uses: Morningstar202604/profile-cards/components/badge-card@v1
   with:
     user: your-github-username
     output: badge-card.svg

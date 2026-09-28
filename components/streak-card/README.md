@@ -4,16 +4,16 @@
 
 数据真实：来自 GitHub 贡献日历（GraphQL，全年数据），非估算。
 
-属于 [Profile Verse](https://github.com/Morningstar202604/profile-verse)。
+属于 [Profile Verse](https://github.com/Morningstar202604/profile-cards)。
 
-![Streak Card](https://cdn.jsdelivr.net/gh/Morningstar202604/profile-verse@main/components/streak-card/preview/streak-card.svg)
+![Streak Card](https://cdn.jsdelivr.net/gh/Morningstar202604/profile-cards@main/components/streak-card/preview/streak-card.svg)
 
 ## 用法
 
 ```yaml
 - uses: actions/checkout@v4
 - name: Generate streak card
-  uses: Morningstar202604/profile-verse/components/streak-card@v1
+  uses: Morningstar202604/profile-cards/components/streak-card@v1
   with:
     user: your-github-username
     output: streak-card.svg

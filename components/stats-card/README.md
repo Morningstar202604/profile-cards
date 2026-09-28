@@ -2,16 +2,16 @@
 
 差异化统计卡：关注者 / 公开仓库 / 已合并 PR 三个大数字，像行星一样排在金色星轨上，背景是星空。一眼特征：**数字骑在星轨上**，不是普通统计条。
 
-属于 [Profile Verse](https://github.com/Morningstar202604/profile-verse)。
+属于 [Profile Verse](https://github.com/Morningstar202604/profile-cards)。
 
-![Stats Card](https://cdn.jsdelivr.net/gh/Morningstar202604/profile-verse@main/components/stats-card/preview/stats-card.svg)
+![Stats Card](https://cdn.jsdelivr.net/gh/Morningstar202604/profile-cards@main/components/stats-card/preview/stats-card.svg)
 
 ## 用法
 
 ```yaml
 - uses: actions/checkout@v4
 - name: Generate stats card
-  uses: Morningstar202604/profile-verse/components/stats-card@v1
+  uses: Morningstar202604/profile-cards/components/stats-card@v1
   with:
     user: your-github-username
     output: stats-card.svg

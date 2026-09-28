@@ -10,7 +10,7 @@ a starfield, with a comet trail crossing the sky. Signature look: glowing name
 Env: USER (default Morningstar202604) · TEXT (subtitle, default below) ·
      OUTPUT (default banner-card.svg) · THEME (dark|light)
 
-Part of Profile Verse: https://github.com/Morningstar202604/profile-verse
+Part of Profile Verse: https://github.com/Morningstar202604/profile-cards
 """
 
 import os
