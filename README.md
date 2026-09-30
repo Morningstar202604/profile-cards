@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/hero-home.png">
-    <img src="assets/hero-light.png" alt="Profile Verse — every part of your GitHub homepage, reimagined" width="100%" />
+    <source media="(prefers-color-scheme: dark)" srcset="assets/showcase/hero-home.png">
+    <img src="assets/showcase/hero-light.png" alt="Profile Verse — every part of your GitHub homepage, reimagined" width="100%" />
   </picture>
 </p>
 
