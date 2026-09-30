@@ -4,6 +4,14 @@ All notable changes to Profile Verse are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/).
 Versioning follows [Semantic Versioning](https://semver.org/lang/zh-CN/).
 
+## [Unreleased]
+
+### Fixed
+- Whole-family counts unified to **10 cards**: `projects-card` is now part of
+  the showcase build (`scripts/build_showcase.py`), the family example workflow
+  (`examples/profile-verse.yml`), and both READMEs — component gallery, repo
+  layout, card counts and the theme table (seven themes) all match the repo.
+
 ## [1.6.0] - 2026-09-28
 
 ### Added

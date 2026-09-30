@@ -9,8 +9,8 @@ Usage:
     SHOTS_DIR=<dir with <card>_<theme>.png> python3 scripts/build_showcase.py
 
 Outputs:
-    assets/showcase/wall-dark.png   — 9 cards · dark theme
-    assets/showcase/wall-light.png  — 9 cards · light theme
+    assets/showcase/wall-dark.png   — 10 cards · dark theme
+    assets/showcase/wall-light.png  — 10 cards · light theme
     assets/hero-home.png            — banner + typing + 4 hero cards (dark)
 """
 
@@ -30,11 +30,11 @@ HEADER_H = 118        # brand strip height
 CARDS = [
     "impact-card", "year-review-card", "stats-card", "banner-card",
     "contrib-grid-card", "tech-stack-card", "streak-card", "badge-card",
-    "typing-card",
+    "typing-card", "projects-card",
 ]
 
-# Two balanced columns (heights at CARD_W: 884/552/487/390 vs 777/585/585/280/195)
-COL1 = ["impact-card", "year-review-card", "stats-card", "banner-card"]
+# Two balanced columns (heights at CARD_W: 884/552/487/390/244 vs 777/585/585/280/195)
+COL1 = ["impact-card", "year-review-card", "stats-card", "banner-card", "projects-card"]
 COL2 = ["contrib-grid-card", "tech-stack-card", "streak-card", "badge-card", "typing-card"]
 
 PALETTES = {
@@ -108,7 +108,7 @@ def draw_header(img, theme):
         except Exception:
             tw = len(word) * 15
     d.text(((w - tw) / 2, HEADER_H / 2 - 22), word, font=font, fill=pal["text"] + (255,))
-    sub = "9 C A R D S  ·  R E A L   D A T A  ·  D A I L Y   R E F R E S H  ·  Z E R O   S E R V E R"
+    sub = "10 C A R D S  ·  R E A L   D A T A  ·  D A I L Y   R E F R E S H  ·  Z E R O   S E R V E R"
     try:
         f2 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 12)
     except Exception:

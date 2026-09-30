@@ -2,7 +2,7 @@
 # Copy this file into your profile repo as  .github/workflows/profile-verse.yml
 # (your username: morningstar-style profile repo:  <user>/<user> )
 #
-# Generates 8 cards daily (or on manual trigger), commits them, and pushes.
+# Generates all 10 cards daily (or on manual trigger), commits them, and pushes.
 # Set theme to dark or light — cards also work with the <picture> trick
 # in your README so they follow each visitor's system theme automatically.
 
@@ -78,6 +78,13 @@ jobs:
         with:
           user: your-github-username
           output: assets/profile-verse/badge-card.svg
+          theme: ${{ inputs.theme }}
+
+      - name: Projects (2×2 grid)
+        uses: Morningstar202604/profile-cards/components/projects-card@v1
+        with:
+          user: your-github-username
+          output: assets/profile-verse/projects-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Impact (merged PRs by repo star tiers)

@@ -14,7 +14,7 @@
   <a href="https://github.com/Morningstar202604/profile-cards/forks"><img src="https://img.shields.io/github/forks/Morningstar202604/profile-cards?style=flat&color=%23C9A86A&label=forks" alt="GitHub forks" /></a>
   <a href="https://github.com/Morningstar202604/profile-cards/actions"><img src="https://img.shields.io/github/actions/workflow/status/Morningstar202604/profile-cards/update.yml?style=flat&color=%23C9A86A&label=previews" alt="预览自动刷新" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/Morningstar202604/profile-cards?style=flat&color=%23C9A86A" alt="MIT license" /></a>
-  <a href="https://github.com/Morningstar202604/profile-cards/releases"><img src="https://img.shields.io/github/v/release/Morningstar202604/profile-cards?style=flat&color=%23C9A86A&label=version" alt="v1.5.0" /></a>
+  <a href="https://github.com/Morningstar202604/profile-cards/releases"><img src="https://img.shields.io/github/v/release/Morningstar202604/profile-cards?style=flat&color=%23C9A86A&label=version" alt="v1.6.0" /></a>
   <a href="README.md"><img src="https://img.shields.io/badge/readme-English-8FB4F5?style=flat" alt="English" /></a>
 </p>
 
@@ -22,7 +22,7 @@
 
 不需要服务器、不需要数据库、不需要绑卡。卡片是纯 SVG，由 GitHub Actions（免费）生成并每日自动刷新；数据全部来自 GitHub API 的**真实数据**，每张卡都标注数据来源与更新时间。
 
-> 🚀 **正在使用**：[Morningstar202604 主页](https://github.com/Morningstar202604/Morningstar202604) 已用 7 张 Profile Verse 卡片。
+> 🚀 **正在使用**：[Morningstar202604 主页](https://github.com/Morningstar202604/Morningstar202604) 已用 Profile Verse 卡片。
 
 ---
 
@@ -39,7 +39,7 @@
 
 ## 🚀 快速开始（全家桶）
 
-把下面这一个 workflow 放进你的主页仓库（`.github/workflows/profile-verse.yml`），7 张卡就全部出现在主页上，每日自动刷新。把 `theme:` 设成 `dark` 或 `light`（也可以手动触发时选择）。
+把下面这一个 workflow 放进你的主页仓库（`.github/workflows/profile-verse.yml`），10 张卡就全部出现在主页上，每日自动刷新。把 `theme:` 设成 `dark` 或 `light`（也可以手动触发时选择）。
 
 ```yaml
 name: Profile Verse Cards
@@ -116,11 +116,25 @@ jobs:
           output: assets/profile-verse/badge-card.svg
           theme: ${{ inputs.theme }}
 
+      - name: Projects (2×2 项目网格)
+        uses: Morningstar202604/profile-cards/components/projects-card@v1
+        with:
+          user: 你的用户名
+          output: assets/profile-verse/projects-card.svg
+          theme: ${{ inputs.theme }}
+
       - name: Impact (按仓库 star 分档的已合并 PR)
         uses: Morningstar202604/profile-cards/components/impact-card@v1
         with:
           users: 你的用户名                 # 多账号聚合：a,b
           output: assets/profile-verse/impact-card.svg
+          theme: ${{ inputs.theme }}
+
+      - name: Year review (年度回顾星轮)
+        uses: Morningstar202604/profile-cards/components/year-review-card@v1
+        with:
+          user: 你的用户名
+          output: assets/profile-verse/year-review-card.svg
           theme: ${{ inputs.theme }}
 
       - name: Commit & push
@@ -146,7 +160,7 @@ jobs:
 
 搞定。没有服务器、没有成本、每天自动刷新。
 
-## 🗂 组件展示厅 · 9 卡 × 双主题
+## 🗂 组件展示厅 · 10 卡 × 双主题
 
 每张卡都有 **`dark`（星夜）与 `light`（纸面）** 两个主题。
 
@@ -270,11 +284,24 @@ jobs:
     output: year-review-card.svg
 ```
 
+### 10 · projects-card — 项目网格卡
+按 star 数取你排名靠前的非 fork 仓库，排成 2×2 网格——名称 · 简介 · 语言 · star，替换主页上干巴巴的文本列表。数据来自 GitHub REST API，`count` 最多 8 个。
+
+![Projects dark](components/projects-card/preview/projects-card.svg)
+![Projects light](components/projects-card/preview/projects-card-light.svg)
+
+```yaml
+- uses: Morningstar202604/profile-cards/components/projects-card@v1
+  with:
+    user: 你的用户名
+    output: projects-card.svg
+```
+
 ## 🎨 设计规范（差异化 + 不拥挤）
 
 - **一眼特征**：每张卡一个独特形态（星轨 / 表盘 / 打字机 / 3D 等距柱 / 星座 / 流星横幅 / 奖章），不做撞脸方案，不做贪吃蛇
 - **星夜 × 鎏金**：深蓝渐变夜空 + 金色只用在数据（数字、锚点、奖牌），正文保持低饱和灰蓝——发光的是数字，不是装饰
-- **四主题一键切换**：全部色板集中在 `core/theme.py` —— `dark`（午夜·默认）、`light`（纸面）、`rose`（玫瑰金）、`ocean`（深海）。
+- **七主题一键切换**：全部色板集中在 `core/theme.py` —— `dark`（午夜·默认）、`light`（纸面）、`rose`（玫瑰金）、`ocean`（深海）、`aurora`（电光紫）、`sunset`（珊瑚橙）、`mint`（薄荷青）。
 
 | 主题 | 名称 | 气质 |
 | --- | --- | --- |
@@ -282,6 +309,9 @@ jobs:
 | `light` | 纸面 | 象牙白 × 压印金 |
 | `rose` | 玫瑰金 | 暖白 × 蔷薇金 |
 | `ocean` | 深海 | 冷蓝绿 × 月光银青 |
+| `aurora` | 电光紫 | 亮紫纸面 × 电光紫鎏金 |
+| `sunset` | 珊瑚橙 | 暖奶油 × 珊瑚橙鎏金 |
+| `mint` | 薄荷青 | 清新翡翠 × 青碧 |
 
 - **明信片装帧**：每张卡四边带一层压印暗记 —— 顶/底细字带、左右竖排文字（`PROFILE VERSE ✦ 零服务器 ✦ …`），像印刷信笺的边注。
 - **数据真实**：统一走 `core/github.py`——GitHub API / 贡献日历 / star 分档，每日刷新，卡上标注来源与更新时间
@@ -290,8 +320,8 @@ jobs:
 ## 🧱 目录结构
 
 ```
-profile-verse/
-├── core/                     共享核心：GitHub API · 贡献日历 · star 分档 · 双主题
+profile-cards/
+├── core/                     共享核心：GitHub API · 贡献日历 · star 分档 · 七主题
 ├── components/
 │   ├── impact-card/          组件 = 生成脚本 + 模板 + action.yml + README + preview
 │   ├── stats-card/
@@ -301,7 +331,8 @@ profile-verse/
 │   ├── tech-stack-card/
 │   ├── year-review-card/
 │   ├── banner-card/
-│   └── badge-card/
+│   ├── badge-card/
+│   └── projects-card/
 ├── examples/                 复制即用的 workflow
 ├── .github/workflows/        本仓库预览每日自刷新
 └── README.md                 组件目录页
@@ -309,7 +340,7 @@ profile-verse/
 
 ## 🌱 一个仓库 · 一个入口
 
-全部九张卡都从这个单一仓库发货 —— 一个 `@v1`、一个 workflow、零服务器。
+全部十张卡都从这个单一仓库发货 —— 一个 `@v1`、一个 workflow、零服务器。
 （`contrib-grid-card` 曾短暂拆出过独立仓，现已合并回来；旧链接会自动指向本仓库。）
 
 每周自动更新的 **⭐ Stargazer Wall 感谢墙**（`.github/workflows/star-wall.yml`）会
