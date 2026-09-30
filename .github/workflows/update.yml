@@ -214,9 +214,21 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           # Gitee rejects force-push from a shallow clone; make history full first.
           git fetch --unshallow origin || true
+          mirror() { # $1 url  $2 timeout(sec)  -> retries transient remote errors
+            local url="$1" tmo="$2"
+            for i in 1 2 3; do
+              if timeout "$tmo" git push "$url" HEAD:main --force; then
+                echo "$url mirrored"
+                return 0
+              fi
+              echo "mirror attempt $i failed, retrying in 15s..."
+              sleep 15
+            done
+            echo "$url mirror skipped after 3 attempts"
+          }
           if [ -n "$GITCODE_TOKEN" ]; then
-            timeout 120 git push "https://badhope:$GITCODE_TOKEN@gitcode.com/badhope/profile-cards.git" HEAD:main --force || echo "gitcode mirror skipped"
+            mirror "https://badhope:$GITCODE_TOKEN@gitcode.com/badhope/profile-cards.git" 120
           fi
           if [ -n "$GITEE_TOKEN" ]; then
-            timeout 180 git push "https://badhope:$GITEE_TOKEN@gitee.com/badhope/profile-cards.git" HEAD:main --force || echo "gitee mirror skipped"
+            mirror "https://badhope:$GITEE_TOKEN@gitee.com/badhope/profile-cards.git" 180
           fi
