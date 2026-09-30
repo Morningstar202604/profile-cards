@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="assets/hero-home.png" alt="Profile Verse — every part of your GitHub homepage, reimagined" width="100%" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/hero-home.png">
+    <img src="assets/hero-light.png" alt="Profile Verse — every part of your GitHub homepage, reimagined" width="100%" />
+  </picture>
 </p>
 
 <h1 align="center">Profile Verse <span style="font-size:0.55em">· 星卡</span></h1>
@@ -311,6 +314,27 @@ Your top non-fork repos by stars in a 2×2 grid — name · description · langu
     user: your-github-username
     output: projects-card.svg
 ```
+
+## 🔄 Showcase: auto-refresh & theme switching
+
+The family showcase (`assets/showcase/wall-*.png` and `assets/hero-*.png`) is
+**rebuilt automatically every day at 01:00 UTC** by the
+[`update.yml`](.github/workflows/update.yml) workflow — every number on every
+card comes from the real GitHub API, and each card stamps its own update time,
+so nothing in the picture ever goes stale.
+
+- **Manual refresh / pick a theme**: go to **Actions → Refresh Preview Cards →
+  Run workflow**, and set `theme` to `dark`, `light`, `rose`, `ocean`,
+  `aurora`, `sunset`, `mint` — or `all` for every theme. The wall & hero are
+  rebuilt in that theme with fresh data and pushed back.
+- **Outputs**: `assets/showcase/wall-<theme>.png` (all 10 cards) and
+  `assets/showcase/hero-<theme>.png` (banner + typing + hero row); the dark
+  hero is also kept as `hero-home.png`.
+- **Dark/light auto-switch**: this README's header uses a `<picture>` block,
+  so visitors get the dark hero in dark mode and the light hero in light mode.
+- **Show your own numbers**: point the `user` / `users` inputs in `update.yml`
+  at your GitHub username, and every card (and the whole showcase) will show
+  your real data on the next run.
 
 ## 🎨 Design system
 

@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "0 1 * * *"
   workflow_dispatch:
+    inputs:
+      theme:
+        description: "Rebuild showcase walls in a theme: dark / light / rose / ocean / aurora / sunset / mint / all (empty = dark+light)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -147,6 +152,44 @@ jobs:
           user: Morningstar202604
           theme: light
           output: components/year-review-card/preview/year-review-card-light.svg
+
+      - name: Projects card
+        uses: ./components/projects-card
+        with:
+          token: ${{ github.token }}
+          user: Morningstar202604
+          output: components/projects-card/preview/projects-card.svg
+
+      - name: Projects card (light)
+        uses: ./components/projects-card
+        with:
+          token: ${{ github.token }}
+          user: Morningstar202604
+          theme: light
+          output: components/projects-card/preview/projects-card-light.svg
+
+      - name: Install SVG renderer & deps
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq librsvg2-bin
+          python3 -m pip install --quiet pillow 2>/dev/null || sudo apt-get install -y -qq python3-pil
+
+      - name: Generate & render theme previews (manual runs only)
+        if: inputs.theme != ''
+        env:
+          THEME: ${{ inputs.theme }}
+          GH_TOKEN: ${{ github.token }}
+          SHOTS_DIR: /tmp/shots
+        run: bash scripts/generate_previews.sh
+
+      - name: Render committed previews (dark & light)
+        run: bash scripts/shot.sh
+
+      - name: Build showcase walls & hero
+        env:
+          SHOTS_DIR: /tmp/shots
+          THEME: ${{ inputs.theme }}
+        run: python3 scripts/build_showcase.py
 
       - name: Commit & push
         run: |

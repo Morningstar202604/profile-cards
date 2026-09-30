@@ -7,19 +7,30 @@ backdrop with a brand header strip.
 
 Usage:
     SHOTS_DIR=<dir with <card>_<theme>.png> python3 scripts/build_showcase.py
+    THEME=all    python3 scripts/build_showcase.py   # all seven themes
+    THEME=rose   python3 scripts/build_showcase.py   # single theme
 
-Outputs:
-    assets/showcase/wall-dark.png   — 10 cards · dark theme
-    assets/showcase/wall-light.png  — 10 cards · light theme
-    assets/hero-home.png            — banner + typing + 4 hero cards (dark)
+Themes (from core/theme.py): dark · light · rose · ocean · aurora · sunset · mint.
+Default when THEME is unset: dark + light (the classic pair).
+
+Outputs (per selected theme T):
+    assets/showcase/wall-T.png      — 10 cards · theme T
+    assets/showcase/hero-T.png      — banner + typing + hero cards · theme T
+    assets/showcase/hero-home.png   — alias of the dark hero (README header)
 """
 
 import os
-from PIL import Image, ImageDraw, ImageFilter
-import math
+import sys
+import shutil
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
+sys.path.insert(0, ROOT)
+
+from PIL import Image, ImageDraw, ImageFilter  # noqa: E402
+from core.theme import PALETTES as THEME_PALETTES  # noqa: E402
+import math  # noqa: E402
+
 SHOTS = os.environ.get("SHOTS_DIR", "/tmp/fin")
 
 CARD_W = 520          # readable gallery width
@@ -37,20 +48,34 @@ CARDS = [
 COL1 = ["impact-card", "year-review-card", "stats-card", "banner-card", "projects-card"]
 COL2 = ["contrib-grid-card", "tech-stack-card", "streak-card", "badge-card", "typing-card"]
 
+# Palettes come straight from core/theme.py so every theme (dark/light/rose/
+# ocean/aurora/sunset/mint) gets a matching wall & hero backdrop automatically.
+_NEEDED = ("bg_top", "bg_bottom", "text", "sub", "line", "gold", "star")
+
+
+def _rgb(hexv):
+    hexv = hexv.lstrip("#")
+    return tuple(int(hexv[i:i + 2], 16) for i in (0, 2, 4))
+
+
 PALETTES = {
-    "dark": {
-        "bg_top": (7, 11, 30), "bg_bottom": (20, 28, 54),
-        "text": (228, 200, 127), "sub": (148, 156, 176),
-        "line": (42, 58, 107), "gold": (201, 168, 106),
-        "star": (190, 200, 224),
-    },
-    "light": {
-        "bg_top": (244, 241, 234), "bg_bottom": (255, 255, 255),
-        "text": (176, 141, 62), "sub": (120, 124, 136),
-        "line": (212, 202, 176), "gold": (176, 141, 62),
-        "star": (140, 132, 120),
-    },
+    name: {k: _rgb(pal[k]) for k in _NEEDED}
+    for name, pal in THEME_PALETTES.items()
 }
+THEMES = list(PALETTES.keys())
+
+
+def wanted_themes():
+    raw = (os.environ.get("THEME") or (sys.argv[1] if len(sys.argv) > 1 else "") or "").strip().lower()
+    if not raw:
+        return ["dark", "light"]
+    if raw == "all":
+        return THEMES
+    out = []
+    for t in raw.replace(",", " ").split():
+        if t in PALETTES and t not in out:
+            out.append(t)
+    return out
 
 
 def load_card(name, theme, w):
@@ -144,8 +169,7 @@ def build_wall(theme, out):
     print(out, img.size, "cols h:", h1, h2, "delta:", abs(h1 - h2))
 
 
-def build_hero(out):
-    theme = "dark"
+def build_hero(out, theme):
     pal = PALETTES[theme]
     w = 1160
     banner = load_card("banner-card", theme, w)
@@ -172,10 +196,18 @@ def build_hero(out):
 
 
 def main():
-    build_wall("dark", os.path.join(ROOT, "assets/showcase/wall-dark.png"))
-    build_wall("light", os.path.join(ROOT, "assets/showcase/wall-light.png"))
-    build_hero(os.path.join(ROOT, "assets/hero-home.png"))
+    themes = wanted_themes()
+    if not themes:
+        print("no valid themes; use THEME=dark|light|rose|ocean|aurora|sunset|mint|all")
+        return 1
+    for t in themes:
+        build_wall(t, os.path.join(ROOT, "assets/showcase/wall-%s.png" % t))
+        hero = os.path.join(ROOT, "assets/showcase/hero-%s.png" % t)
+        build_hero(hero, t)
+        if t == "dark":
+            shutil.copy(hero, os.path.join(ROOT, "assets/showcase/hero-home.png"))
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

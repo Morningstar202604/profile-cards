@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="assets/hero-home.png" alt="Profile Verse — 把 GitHub 主页的每个部位换成一张好卡" width="100%" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/hero-home.png">
+    <img src="assets/hero-light.png" alt="Profile Verse — 把 GitHub 主页的每个部位换成一张好卡" width="100%" />
+  </picture>
 </p>
 
 <h1 align="center">Profile Verse · 主页宇宙</h1>
@@ -296,6 +299,21 @@ jobs:
     user: 你的用户名
     output: projects-card.svg
 ```
+
+## 🔄 全家桶图：自动刷新 & 换肤
+
+全家桶展示图（`assets/showcase/wall-*.png` 与 `assets/hero-*.png`）由
+[`update.yml`](.github/workflows/update.yml) 流水线**每天 01:00 UTC 自动重建**——
+每张卡的数字全部来自真实 GitHub API，卡上自带更新时间戳，图里的内容永远不会过期。
+
+- **手动刷新 / 换肤**：进入 **Actions → Refresh Preview Cards → Run workflow**，
+  在 `theme` 里填 `dark`、`light`、`rose`、`ocean`、`aurora`、`sunset`、`mint`，
+  或填 `all` 一次生成全部主题。流水线会用最新数据按所选主题重建墙图与头图并推回仓库。
+- **产物**：`assets/showcase/wall-<主题>.png`（全部 10 张卡）与
+  `assets/showcase/hero-<主题>.png`（横幅 + 打字机 + 主页精选行）；深色头图同时保留为 `hero-home.png`。
+- **深浅色自动切换**：本 README 头图用了 `<picture>`，访客深色模式看到深色头图、浅色模式看到浅色头图。
+- **显示你自己的数字**：把 `update.yml` 里的 `user` / `users` 改成你的 GitHub 用户名，
+  下一次运行后所有卡（含全家桶图）都会换成你的真实数据。
 
 ## 🎨 设计规范（差异化 + 不拥挤）
 

@@ -6,11 +6,20 @@ Versioning follows [Semantic Versioning](https://semver.org/lang/zh-CN/).
 
 ## [Unreleased]
 
+### Added
+- **Showcase auto-refresh & theme switching**: `update.yml` now rebuilds the
+  wall & hero PNGs every day at 01:00 UTC and on manual `workflow_dispatch`
+  with a `theme` input (`dark` / `light` / `rose` / `ocean` / `aurora` /
+  `sunset` / `mint` / `all`); new `scripts/shot.sh` renders preview SVGs to
+  PNGs in CI; `build_showcase.py` now generates every theme from `core/theme.py`.
+- README hero switches dark/light automatically via `<picture>`.
+
 ### Fixed
 - Whole-family counts unified to **10 cards**: `projects-card` is now part of
   the showcase build (`scripts/build_showcase.py`), the family example workflow
-  (`examples/profile-verse.yml`), and both READMEs — component gallery, repo
-  layout, card counts and the theme table (seven themes) all match the repo.
+  (`examples/profile-verse.yml`), the daily preview refresh (`update.yml`),
+  and both READMEs — component gallery, repo layout, card counts and the theme
+  table (seven themes) all match the repo.
 
 ## [1.6.0] - 2026-09-28
 
