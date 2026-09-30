@@ -7,6 +7,8 @@
 
 <h1 align="center">Profile Verse <span style="font-size:0.55em">· 星卡</span></h1>
 
+<p align="center"><sub><b>Profile Verse</b> is the brand &middot; this repo is <code>profile-cards</code> &mdash; same project, one family.</sub></p>
+
 <p align="center">
   <b>Every section of your GitHub profile — reimagined as a beautiful, cohesive card.</b><br/>
   Zero server · Zero cost · Real data · 7 signature themes · One repo, all cards.

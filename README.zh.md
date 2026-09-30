@@ -7,6 +7,8 @@
 
 <h1 align="center">Profile Verse · 主页宇宙</h1>
 
+<p align="center"><sub>品牌 <b>Profile Verse</b> &middot; 仓库 <code>profile-cards</code> &mdash;&mdash; 同一个项目、同一套全家桶。</sub></p>
+
 <p align="center">
   <b>把 GitHub 主页的每一个部位，都换成一张更好看的卡。</b><br/>
   零服务器 · 零成本 · 数据真实 · 深浅双主题 · 一个仓库逛完全部组件。
