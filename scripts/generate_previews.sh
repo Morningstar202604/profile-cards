@@ -23,8 +23,18 @@ export GH_TOKEN="${GH_TOKEN:-}"
 render_png() { # $1 svg  $2 out
   local svg="$1" out="$2"
   local w h
-  w="$(grep -oE '<svg[^>]*width="[0-9]+' "$svg" | head -1 | grep -oE '[0-9]+' || echo 640)"
-  h="$(grep -oE '<svg[^>]*height="[0-9]+' "$svg" | head -1 | grep -oE '[0-9]+' || echo 480)"
+  read -r w h < <(python3 - "$svg" <<'PYEOF'
+import re, sys
+txt = open(sys.argv[1], encoding="utf-8", errors="replace").read()
+m = re.search(r'<svg\b[^>]*?\bwidth="([\d.]+)"[^>]*?\bheight="([\d.]+)"', txt)
+if m:
+    print(m.group(1), m.group(2)); sys.exit(0)
+m = re.search(r'<svg\b[^>]*?viewBox="\s*[\d.\-]+\s+[\d.\-]+\s+([\d.]+)\s+([\d.]+)"', txt)
+if m:
+    print(m.group(1), m.group(2)); sys.exit(0)
+print("640 480")
+PYEOF
+)
   if command -v rsvg-convert >/dev/null 2>&1; then
     rsvg-convert -w "$w" -h "$h" "$svg" -o "$out"
   elif command -v convert >/dev/null 2>&1; then
