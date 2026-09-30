@@ -212,9 +212,11 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Gitee rejects force-push from a shallow clone; make history full first.
+          git fetch --unshallow origin || true
           if [ -n "$GITCODE_TOKEN" ]; then
-            git push "https://badhope:$GITCODE_TOKEN@gitcode.com/badhope/profile-cards.git" HEAD:main --force || echo "gitcode mirror skipped"
+            timeout 120 git push "https://badhope:$GITCODE_TOKEN@gitcode.com/badhope/profile-cards.git" HEAD:main --force || echo "gitcode mirror skipped"
           fi
           if [ -n "$GITEE_TOKEN" ]; then
-            git push "https://badhope:$GITEE_TOKEN@gitee.com/badhope/profile-cards.git" HEAD:main --force || echo "gitee mirror skipped"
+            timeout 180 git push "https://badhope:$GITEE_TOKEN@gitee.com/badhope/profile-cards.git" HEAD:main --force || echo "gitee mirror skipped"
           fi
