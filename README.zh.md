@@ -1,35 +1,44 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/showcase/hero-home.png">
-    <img src="assets/showcase/hero-light.png" alt="Profile Verse — 把 GitHub 主页的每个部位换成一张好卡" width="100%" />
+    <img src="assets/showcase/hero-light.png" alt="Profile Verse — 开源 GitHub 主页卡片：打字机、统计、连续提交、3D 贡献柱、技术栈、徽章、项目、影响力、年度回顾" width="100%" />
   </picture>
 </p>
 
-<h1 align="center">Profile Verse · 主页宇宙</h1>
+<h1 align="center">Profile Verse · 开源 GitHub 主页卡片</h1>
 
 <p align="center"><sub>品牌 <b>Profile Verse</b> &middot; 仓库 <code>profile-cards</code> &mdash;&mdash; 同一个项目、同一套全家桶。</sub></p>
 
-<p align="center">
-  <b>把 GitHub 主页的每一个部位，都换成一张更好看的卡。</b><br/>
-  零服务器 · 零成本 · 数据真实 · 深浅双主题 · 一个仓库逛完全部组件。
-</p>
+<div align="center">
+
+[English](README.md) &middot; [中文](README.zh.md) &middot; [日本語](README.ja.md) &middot; [Deutsch](README.de.md) &middot; [Español](README.es.md) &middot; [Français](README.fr.md) &middot; [한국어](README.ko.md)
+
+</div>
 
 <p align="center">
   <a href="https://github.com/Morningstar202604/profile-cards/stargazers"><img src="https://img.shields.io/github/stars/Morningstar202604/profile-cards?style=flat&color=%23C9A86A&label=stars" alt="GitHub stars" /></a>
   <a href="https://github.com/Morningstar202604/profile-cards/forks"><img src="https://img.shields.io/github/forks/Morningstar202604/profile-cards?style=flat&color=%23C9A86A&label=forks" alt="GitHub forks" /></a>
-  <a href="https://github.com/Morningstar202604/profile-cards/actions"><img src="https://img.shields.io/github/actions/workflow/status/Morningstar202604/profile-cards/update.yml?style=flat&color=%23C9A86A&label=previews" alt="预览自动刷新" /></a>
+  <a href="https://github.com/Morningstar202604/profile-cards/actions"><img src="https://img.shields.io/github/actions/workflow/status/Morningstar202604/profile-cards/update.yml?style=flat&color=%23C9A86A&label=previews" alt="每日自动刷新" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/Morningstar202604/profile-cards?style=flat&color=%23C9A86A" alt="MIT license" /></a>
   <a href="https://github.com/Morningstar202604/profile-cards/releases"><img src="https://img.shields.io/github/v/release/Morningstar202604/profile-cards?style=flat&color=%23C9A86A&label=version" alt="v1.6.0" /></a>
-  <a href="README.md"><img src="https://img.shields.io/badge/readme-English-8FB4F5?style=flat" alt="English" /></a>
+  <img src="https://img.shields.io/badge/SVG-100%25-C9A86A?style=flat" alt="纯 SVG，零服务器" />
 </p>
 
-**Profile Verse** 把 GitHub 主页的每个区块都替换成一张有辨识度的卡：星空打字机、3D 贡献柱、金色影响力奖牌、技术栈星座……全部共享同一套设计语言——**星夜 × 鎏金**，每张卡都带真实的 **深色 / 浅色** 双主题。
+> ⭐ **喜欢这个项目？点个 Star**——一次点击，让这套卡片永远免费。
 
-不需要服务器、不需要数据库、不需要绑卡。卡片是纯 SVG，由 GitHub Actions（免费）生成并每日自动刷新；数据全部来自 GitHub API 的**真实数据**，每张卡都标注数据来源与更新时间。
+**Profile Verse** 把普通的 GitHub 主页变成一座**星空数据展馆**：10 张开源的 **SVG 卡片**——打字机、统计、连续提交、3D 贡献柱、技术栈、金色徽章、项目、开源影响力、年度回顾、横幅——由 **GitHub Actions** 免费生成，**每日自动刷新**，数据全部来自 **GitHub API 真实数据**，支持 **7 套主题**（深浅双模式）。一个 workflow 文件，复制即用，零服务器、零成本。[在线示例](https://github.com/Morningstar202604/Morningstar202604) 正在真实主页上运行。
 
-> 🚀 **正在使用**：[Morningstar202604 主页](https://github.com/Morningstar202604/Morningstar202604) 已用 Profile Verse 卡片。
+## ✨ 特性
 
----
+- **10 张卡片，一套设计语言** — 打字机 · 统计 · 连续提交 · 贡献柱 · 技术栈 · 徽章 · 项目 · 影响力 · 年度回顾 · 横幅
+- **7 套签名主题** — `dark` `light` `rose` `ocean` `aurora` `sunset` `mint`，每张卡全主题可用
+- **100% 真实数据** — GitHub REST API + 贡献日历；每张卡都标注数据来源与更新时间
+- **永久免费** — 纯 SVG 由免费 GitHub Actions 生成；无服务器、无数据库、无需绑卡
+- **每日自动刷新** — 数字永不过时；随时可手动触发并换主题
+- **一个文件上手** — 把一份 workflow 复制进主页仓库，10 张卡全部出现
+- **深浅自动切换** — `<picture>` 跟随访客系统主题
+- **fork 即自适应** — `${{ github.repository_owner }}` 让 fork 自动显示**你自己的**数据
+- **不做蛇、不撞脸** — 每张卡都有独一无二的辨识形状
 
 ## ✨ 为什么选它
 
