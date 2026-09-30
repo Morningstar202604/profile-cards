@@ -28,14 +28,14 @@ jobs:
         uses: ./components/impact-card
         with:
           token: ${{ github.token }}
-          users: Morningstar202604
+          users: ${{ github.repository_owner }}
           output: components/impact-card/preview/impact-card.svg
 
       - name: Impact card (light)
         uses: ./components/impact-card
         with:
           token: ${{ github.token }}
-          users: Morningstar202604
+          users: ${{ github.repository_owner }}
           theme: light
           output: components/impact-card/preview/impact-card-light.svg
 
@@ -43,14 +43,14 @@ jobs:
         uses: ./components/stats-card
         with:
           token: ${{ github.token }}
-          user: Morningstar202604
+          user: ${{ github.repository_owner }}
           output: components/stats-card/preview/stats-card.svg
 
       - name: Stats card (light)
         uses: ./components/stats-card
         with:
           token: ${{ github.token }}
-          user: Morningstar202604
+          user: ${{ github.repository_owner }}
           theme: light
           output: components/stats-card/preview/stats-card-light.svg
 
@@ -58,14 +58,14 @@ jobs:
         uses: ./components/streak-card
         with:
           token: ${{ github.token }}
-          user: Morningstar202604
+          user: ${{ github.repository_owner }}
           output: components/streak-card/preview/streak-card.svg
 
       - name: Streak card (light)
         uses: ./components/streak-card
         with:
           token: ${{ github.token }}
-          user: Morningstar202604
+          user: ${{ github.repository_owner }}
           theme: light
           output: components/streak-card/preview/streak-card-light.svg
 
@@ -84,14 +84,14 @@ jobs:
         uses: ./components/contrib-grid-card
         with:
           token: ${{ github.token }}
-          user: Morningstar202604
+          user: ${{ github.repository_owner }}
           output: components/contrib-grid-card/preview/contrib-grid-card.svg
 
       - name: Contribution grid card (3D, light)
         uses: ./components/contrib-grid-card
         with:
           token: ${{ github.token }}
-          user: Morningstar202604
+          user: ${{ github.repository_owner }}
           theme: light
           output: components/contrib-grid-card/preview/contrib-grid-card-light.svg
 
@@ -99,27 +99,27 @@ jobs:
         uses: ./components/tech-stack-card
         with:
           token: ${{ github.token }}
-          user: Morningstar202604
+          user: ${{ github.repository_owner }}
           output: components/tech-stack-card/preview/tech-stack-card.svg
 
       - name: Tech stack card (light)
         uses: ./components/tech-stack-card
         with:
           token: ${{ github.token }}
-          user: Morningstar202604
+          user: ${{ github.repository_owner }}
           theme: light
           output: components/tech-stack-card/preview/tech-stack-card-light.svg
 
       - name: Banner card
         uses: ./components/banner-card
         with:
-          user: Morningstar202604
+          user: ${{ github.repository_owner }}
           output: components/banner-card/preview/banner-card.svg
 
       - name: Banner card (light)
         uses: ./components/banner-card
         with:
-          user: Morningstar202604
+          user: ${{ github.repository_owner }}
           theme: light
           output: components/banner-card/preview/banner-card-light.svg
 
@@ -127,14 +127,14 @@ jobs:
         uses: ./components/badge-card
         with:
           token: ${{ github.token }}
-          user: Morningstar202604
+          user: ${{ github.repository_owner }}
           output: components/badge-card/preview/badge-card.svg
 
       - name: Badge card (light)
         uses: ./components/badge-card
         with:
           token: ${{ github.token }}
-          user: Morningstar202604
+          user: ${{ github.repository_owner }}
           theme: light
           output: components/badge-card/preview/badge-card-light.svg
 
@@ -142,14 +142,14 @@ jobs:
         uses: ./components/year-review-card
         with:
           token: ${{ github.token }}
-          user: Morningstar202604
+          user: ${{ github.repository_owner }}
           output: components/year-review-card/preview/year-review-card.svg
 
       - name: Year review card (light)
         uses: ./components/year-review-card
         with:
           token: ${{ github.token }}
-          user: Morningstar202604
+          user: ${{ github.repository_owner }}
           theme: light
           output: components/year-review-card/preview/year-review-card-light.svg
 
@@ -157,14 +157,14 @@ jobs:
         uses: ./components/projects-card
         with:
           token: ${{ github.token }}
-          user: Morningstar202604
+          user: ${{ github.repository_owner }}
           output: components/projects-card/preview/projects-card.svg
 
       - name: Projects card (light)
         uses: ./components/projects-card
         with:
           token: ${{ github.token }}
-          user: Morningstar202604
+          user: ${{ github.repository_owner }}
           theme: light
           output: components/projects-card/preview/projects-card-light.svg
 

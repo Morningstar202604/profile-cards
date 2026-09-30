@@ -312,8 +312,10 @@ jobs:
 - **产物**：`assets/showcase/wall-<主题>.png`（全部 10 张卡）与
   `assets/showcase/hero-<主题>.png`（横幅 + 打字机 + 主页精选行）；深色头图同时保留为 `hero-home.png`。
 - **深浅色自动切换**：本 README 头图用了 `<picture>`，访客深色模式看到深色头图、浅色模式看到浅色头图。
-- **显示你自己的数字**：把 `update.yml` 里的 `user` / `users` 改成你的 GitHub 用户名，
-  下一次运行后所有卡（含全家桶图）都会换成你的真实数据。
+- **显示你自己的数字（全自动）**：`update.yml` 数据源已改为
+  `${{ github.repository_owner }}`——任何人 fork 本仓库后，每日刷新会自动显示
+  **fork 者自己**的 GitHub 数据，无需改任何配置。卡片组件本身也仍支持显式传
+  `user` / `users` 指向其他账号。
 
 ## 🎨 设计规范（差异化 + 不拥挤）
 

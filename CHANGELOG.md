@@ -13,6 +13,9 @@ Versioning follows [Semantic Versioning](https://semver.org/lang/zh-CN/).
   `sunset` / `mint` / `all`); new `scripts/shot.sh` renders preview SVGs to
   PNGs in CI; `build_showcase.py` now generates every theme from `core/theme.py`.
 - README hero switches dark/light automatically via `<picture>`.
+- **Adaptive data source**: `update.yml` now uses
+  `${{ github.repository_owner }}` instead of a hard-coded username, so every
+  fork automatically shows the fork owner's real GitHub data on refresh.
 
 ### Fixed
 - Whole-family counts unified to **10 cards**: `projects-card` is now part of

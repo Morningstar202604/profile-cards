@@ -332,9 +332,11 @@ so nothing in the picture ever goes stale.
   hero is also kept as `hero-home.png`.
 - **Dark/light auto-switch**: this README's header uses a `<picture>` block,
   so visitors get the dark hero in dark mode and the light hero in light mode.
-- **Show your own numbers**: point the `user` / `users` inputs in `update.yml`
-  at your GitHub username, and every card (and the whole showcase) will show
-  your real data on the next run.
+- **Show your own numbers — automatic**: `update.yml` reads
+  `${{ github.repository_owner }}`, so when you fork this repo the daily
+  refresh automatically shows **your** GitHub data — no edits needed.
+  (The card components themselves also accept explicit `user` / `users`
+  inputs if you ever want to point at someone else.)
 
 ## 🎨 Design system
 
